@@ -16,6 +16,7 @@ render(){
                    <>
                    <li onClick={this.props.logout}>Logout</li>
                    <li><Link to='/profile'>My Profile</Link></li>
+                   <li><Link to='/product'>My Products</Link></li>
                    <li>My Shopping Cart</li>
 
 

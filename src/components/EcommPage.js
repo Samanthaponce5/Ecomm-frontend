@@ -8,8 +8,25 @@ import SearchContainer from './Search Container'
 import { Container } from 'semantic-ui-react'
 
 class EcommPage extends Component {
-    state = {}
+    state = {
+        firstName:'',
+        lastName:'',
+        username:'',
+        password:'',
+        cart:[]
+    }
+
+    inputChange = (event) =>{
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+    toggleSubmit = (event) =>{
+        event.preventDefault()
+        console.log('Should this persis to backend?')
+    }
     render() {
+        console.log(this.state)
         return (
             <div className="App">
                 <Container>
@@ -17,7 +34,14 @@ class EcommPage extends Component {
                     <br />
                     <Navbar />
                     <SearchContainer />
-                    <Login />
+                    <Login 
+                    firstName={this.state.firstName} 
+                    lastName={this.state.lastName} 
+                    username={this.state.username}
+                    password={this.state.password}
+                    inputChange={this.inputChange}
+                    toggleSubmit={this.toggleSubmit}
+                    />
                     <Cart />
                     <Category />
                     <ProductContainer />

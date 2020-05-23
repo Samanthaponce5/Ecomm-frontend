@@ -9,6 +9,7 @@ import Home from './component/Home'
 import CreateAccount from './component/CreateAccount'
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Products from './component/Products';
+import EcommPage from './components/EcommPage'
 
 class App extends React.Component {
   constructor(){

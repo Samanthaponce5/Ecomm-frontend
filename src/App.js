@@ -9,32 +9,30 @@ import Home from './component/Home'
 import CreateAccount from './component/CreateAccount'
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Products from './component/Products';
-// import EcommPage from './components/EcommPage'
+
 
 class App extends React.Component {
   constructor() {
     super()
-    this.state = {
-      CurrentUser: null,
-      CurrentAvatar: null,
-      CurrentProduct: null,
-      CurrentImage: [],
-      cart:[]
-    }
 
+      this.state = {
+        CurrentUser:null,
+      
+        CurrentProduct:null,
+        CurrentImage:[]
+      }
+    
   }
 
-  setCurrentUser = (data) => {
-    this.setState({
-      CurrentUser: data.user,
-      CurrentAvatar: data.avatar
-    })
-  }
+
+
 
   updateCurrentUser = (data) => {
     this.setState({
-      CurrentUser: data.user,
-      CurrentAvatar: data.avatar_url
+
+      CurrentUser:data.user,
+    
+
     })
   }
 
@@ -49,42 +47,45 @@ class App extends React.Component {
   }
 
 
-
-
-  logout = () => {
+  setCurrentUser =(data)=> {
     this.setState({
-      CurrentUser: null,
-      CurrentAvatar: null
+      CurrentUser:data.user,
+    
     })
   }
 
-  render() {
-    return (
-      <Fragment>
-        <NavBar currentUser={this.state.CurrentUser} logout={this.logout} />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/login' render={(props) => <Login setCurrentUser={this.setCurrentUser} routerProps={props} />} />
-          <Route exact path='/create_account' render={(props) => <CreateAccount updateCurrentUser={this.updateCurrentUser} routerProps={props} />} />
-          <Route exact path='/sellProduct' render={(props) => <NewProductForm currentUser={this.state.CurrentUser} updateCurrentProduct={this.updateCurrentProduct} routerProps={props} />} />
+  logout = () => {
+    this.setState({
 
-          <Route exact path='/product' render={(props) => <Products currentUser={this.state.CurrentUser} currentProduct={this.state.CurrentProduct} currentImage={this.state.CurrentImage} routerProps={props} />} />
+      CurrentUser:null,
+     
+    })
+  }
 
+  render(){
+  return (
+ <Fragment>
+   
+<NavBar currentUser={this.state.CurrentUser} logout={this.logout} />
+<Switch>
+  <Route exact path='/' component={Home}/>
+  <Route exact path='/login' render={(props)=><Login setCurrentUser={this.setCurrentUser}  routerProps={props}/>} />
+  <Route exact path='/create_account' render={(props)=> <CreateAccount updateCurrentUser={this.updateCurrentUser} routerProps={props}/>}/>
+  <Route exact path='/sellProduct' render={(props)=> <NewProductForm currentUser={this.state.CurrentUser} updateCurrentProduct={this.updateCurrentProduct} routerProps={props}/>}/>
 
+  <Route exact path='/product' render={(props)=> <Products currentUser={this.state.CurrentUser}  currentProduct={this.state.CurrentProduct} currentImage={this.state.CurrentImage} routerProps={props}/>}/>
 
-          <Route exact path='/profile' render={(props) => {
-            return this.state.CurrentUser ? (
-              <>
-                <Profile currentUser={this.state.CurrentUser} currentAvatar={this.state.CurrentAvatar} />
-              </>
-            ) : (
-                // <Login setCurrentUser={this.setCurrentUser}/>
-                <Redirect to='/login' />
-              )
-          }} />
+  
 
-        </Switch>
-      </Fragment>
+  <Route exact path='/profile' render={(props)=>{
+    return this.state.CurrentUser ?(
+     
+      <Profile currentUser={this.state.CurrentUser} />
+      
+    ) : (
+      <Login setCurrentUser={this.setCurrentUser}/>
+      // <Redirect to='/login' />
+
     )
   }
 }

@@ -68,9 +68,11 @@ export default class NewProductForm extends Component {
     }
 
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
+    
+    render(){
+      return (
+        <form className='productForm' onSubmit={this.handleSubmit}>
+
                 <label>Title</label>
                 <input type='text' name='title' value={this.state.title} onChange={this.handleOnChange} /><br />
                 <label>Type</label>

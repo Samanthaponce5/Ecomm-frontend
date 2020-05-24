@@ -5,7 +5,7 @@ import Category from './Category'
 import ProductContainer from './Product Container'
 import Navbar from './Nav Bar'
 import SearchContainer from './Search Container'
-import { Container } from 'semantic-ui-react'
+// import { Container } from 'semantic-ui-react'
 
 class EcommPage extends Component {
     state = {
@@ -29,7 +29,6 @@ class EcommPage extends Component {
         console.log(this.state)
         return (
             <div className="App">
-                <Container>
                     <h1> E C O M M   T I T L E  </h1>
                     <br />
                     <Navbar />
@@ -45,8 +44,6 @@ class EcommPage extends Component {
                     <Cart />
                     <Category />
                     <ProductContainer />
-                </Container>
-
             </div>
         );
     }

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import NewProductForm from './component/NewProductForm'
 import './App.css';
 import Login from './component/Login';
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import NavBar from './component/NavBar'
 import Profile from './component/Profile'
 import Home from './component/Home'
@@ -11,10 +11,10 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Products from './component/Products';
 
 
-
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super()
+
       this.state = {
         CurrentUser:null,
       
@@ -26,20 +26,23 @@ class App extends React.Component {
 
 
 
-  updateCurrentUser=(data)=>{
+
+  updateCurrentUser = (data) => {
     this.setState({
+
       CurrentUser:data.user,
     
+
     })
   }
 
 
 
 
-  updateCurrentProduct=(data)=>{
+  updateCurrentProduct = (data) => {
     this.setState({
-      CurrentProduct:data.product,
-      CurrentImage:data.image_url
+      CurrentProduct: data.product,
+      CurrentImage: data.image_url
     })
   }
 
@@ -51,8 +54,9 @@ class App extends React.Component {
     })
   }
 
-  logout=()=>{
+  logout = () => {
     this.setState({
+
       CurrentUser:null,
      
     })
@@ -81,13 +85,9 @@ class App extends React.Component {
     ) : (
       <Login setCurrentUser={this.setCurrentUser}/>
       // <Redirect to='/login' />
+
     )
-  }} />
-  
-</Switch>
- </Fragment>
-  )
-}
+  }
 }
 // export default App
 export default withRouter(App);

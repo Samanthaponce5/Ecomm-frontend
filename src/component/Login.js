@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 export default class Login extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			first_name: '',
+			username: '',
 			password: '',
 		};
 	}
@@ -19,7 +20,7 @@ export default class Login extends React.Component {
 		event.preventDefault();
         
         let user ={
-            first_name: this.state.first_name, 
+            first_name: this.state.username, 
             password: this.state.password
         }
 
@@ -36,34 +37,46 @@ export default class Login extends React.Component {
             this.props.setCurrentUser(data)
             // this.props.routerProps.history.push('/profile')
         })
-
+		this.setState({
+			username: '',
+			password: '',
+		});
 
 	}
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<label><b>Name:</b></label>
+			<form className='loginForm' onSubmit={this.handleSubmit}>
+				
 				<input
+				autoComplete="off"
+				className='loginputname'
 					type="text"
-					name="first_name"
-					value={this.state.first_name}
+					placeholder="User Name"
+					name="username"
+					value={this.state.username}
 					onChange={this.handleOnChange}
 				
-				/>
+				/><br/>
 
 				<label>
-					<b>Password:</b>
+				
 				</label>
 				<input
+				autoComplete="off"
+				className='loginputpassword'
 					type="password"
 					placeholder="Enter Password"
 					name="password"
 					value={this.state.password}
 					onChange={this.handleOnChange}
 					
-				/>
+				/><br/>
 
-				<input type="submit" value="Login" />
+				<input className='loginbutton' type="submit" value="Login" />
+				<ul className='signuplog'>
+				<span><b>Don't have an account?</b></span><br />
+				<span><Link to='/create_account'>Sign up</Link></span>
+				</ul>
 			</form>
 		)
 	}

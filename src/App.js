@@ -9,31 +9,27 @@ import Home from './component/Home'
 import CreateAccount from './component/CreateAccount'
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Products from './component/Products';
-import EcommPage from './components/EcommPage'
+
+
 
 class App extends React.Component {
   constructor(){
     super()
       this.state = {
         CurrentUser:null,
-        CurrentAvatar:null,
+      
         CurrentProduct:null,
         CurrentImage:[]
       }
     
   }
 
-  setCurrentUser =(data)=> {
-    this.setState({
-      CurrentUser:data.user,
-      CurrentAvatar: data.avatar
-    })
-  }
+
 
   updateCurrentUser=(data)=>{
     this.setState({
       CurrentUser:data.user,
-      CurrentAvatar:data.avatar_url
+    
     })
   }
 
@@ -48,19 +44,25 @@ class App extends React.Component {
   }
 
 
-
+  setCurrentUser =(data)=> {
+    this.setState({
+      CurrentUser:data.user,
+    
+    })
+  }
 
   logout=()=>{
     this.setState({
       CurrentUser:null,
-      CurrentAvatar:null
+     
     })
   }
 
   render(){
   return (
  <Fragment>
-<NavBar currentUser={this.state.CurrentUser} logout={this.logout}/>
+   
+<NavBar currentUser={this.state.CurrentUser} logout={this.logout} />
 <Switch>
   <Route exact path='/' component={Home}/>
   <Route exact path='/login' render={(props)=><Login setCurrentUser={this.setCurrentUser}  routerProps={props}/>} />
@@ -73,12 +75,12 @@ class App extends React.Component {
 
   <Route exact path='/profile' render={(props)=>{
     return this.state.CurrentUser ?(
-      <>
-      <Profile currentUser={this.state.CurrentUser} currentAvatar={this.state.CurrentAvatar}/>
-      </>
+     
+      <Profile currentUser={this.state.CurrentUser} />
+      
     ) : (
-      // <Login setCurrentUser={this.setCurrentUser}/>
-      <Redirect to='/login' />
+      <Login setCurrentUser={this.setCurrentUser}/>
+      // <Redirect to='/login' />
     )
   }} />
   

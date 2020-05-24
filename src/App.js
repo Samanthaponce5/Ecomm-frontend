@@ -85,9 +85,13 @@ class App extends React.Component {
     ) : (
       <Login setCurrentUser={this.setCurrentUser}/>
       // <Redirect to='/login' />
-
+     
     )
   }
-}
+}/>
+</Switch>
+</Fragment>
+  )}}
+
 // export default App
 export default withRouter(App);

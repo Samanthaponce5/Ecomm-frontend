@@ -1,4 +1,4 @@
-
+/* BACKROUND */
 body {
 	background-color: rgb(121, 131, 138);
 }
@@ -9,7 +9,6 @@ body {
   color: inherit;
 } */
 
-
 .content {
 	height: 200vh;
 	background-color: rgba(233, 232, 232, 0.288);
@@ -18,31 +17,44 @@ body {
 	display: grid;
 	place-items: center;
 }
-@import url('https://fonts.googleapis.com/css?family=Belleza');
+/* ==========NAVBAR ================*/
 
-/* navigation styles start here */
+@import url('https://fonts.googleapis.com/css?family=Belleza');/* for navbar fonts */
+
 .top {
 	background: transparent;
 	text-align: center;
 	position: fixed;
 	z-index: -999;
 	width: 100%;
+	text-shadow: 2px 2px 4px #504f4f;
+	font-family: 'Belleza';
+	font-size: 10px;
 	/* border-radius: 15px; */
 	/* border-bottom: 5px solid rgb(44, 40, 40); */
 	/* box-shadow: 10px 5px 5px grey; */
-	text-shadow: 2px 2px 4px #504f4f;
-
-	font-family: 'Belleza';
-	font-size: 10px;
 }
 
-.sellContent {
+.welcome {
+	/* WELCOME, USERNAME */
+	position: absolute;
+	/* border-style: dashed; */
+	z-index: -999;
+	margin: 0;
+	width: 250px;
+
+	top: 62%;
+	left: 4%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
+.sellContentLink {
 	/* border: 3px solid #73AD21; */
 	position: absolute;
-
 	left: 21%;
 }
-.current {
+.homeLink {
 	/* border: 3px solid #73AD21; */
 
 	position: absolute;
@@ -148,22 +160,9 @@ nav a:hover {
 }
 /* END OF NAVBAR */
 
-.productForm {
-	width: 200px;
-	margin: auto;
-	border: 3px solid #73ad21;
-
-	margin: 0;
-
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
-}
 
 
-/* LOGIN FORM */
+/* ====LOGIN FORM =====*/
 .loginForm {
 	margin: auto;
 	/* border: 3px solid #73AD21; */
@@ -178,14 +177,14 @@ nav a:hover {
 }
 
 .loginputname {
-  outline:none !important;
-  width: 430px;
+	outline: none !important;
+	width: 430px;
 
 	padding: 12px 24px;
 
 	background-color: transparent;
 
-  font-size: 14px;
+	font-size: 14px;
 
 	line-height: 18px;
 
@@ -200,7 +199,7 @@ nav a:hover {
 }
 
 .loginputpassword {
-  outline:none !important;
+	outline: none !important;
 	position: absolute;
 	bottom: 170px;
 
@@ -222,7 +221,7 @@ nav a:hover {
 }
 
 .loginbutton {
-  outline:none !important;
+	outline: none !important;
 	position: absolute;
 	bottom: 10px;
 	height: 70px;
@@ -236,25 +235,27 @@ nav a:hover {
 
 	background-color: #64738056;
 	border-radius: 50px;
-  box-shadow: 10px 25px 10px -9px rgba(0, 0, 0, 0.25);
-  
+	box-shadow: 10px 25px 10px -9px rgba(0, 0, 0, 0.25);
 }
-
-.signuplog{
-    /* border: 3px solid #73AD21; */
-    outline:none !important;
-    position: absolute;
-    bottom: 90px;
-    
+.signuplog {
+	/* LINK IN LOG IN TO SIGN UP IF THEY DONT HAVE ACCOUNT */
+	/* border: 3px solid #73AD21; */
+	outline: none !important;
+	position: absolute;
+	bottom: 90px;
 }
-/* SIGNUP FORM */
+/* =========================END OF LOG IN=============================== */
 
 
-.signlogin{
-  /* for link from create account */
-  position: absolute;
-  bottom: 90px;
-  position: absolute;
+
+/* ===========================SIGN UP FORM================================= */
+
+
+.signlogin {
+	/* LINK TO LOG IN IF EXISTING ACCOUNT */
+	position: absolute;
+	bottom: 90px;
+	position: absolute;
 
 	left: 23%;
 }
@@ -262,7 +263,7 @@ nav a:hover {
 .signup {
 	margin: auto;
 	/* border: 3px solid #73AD21; */
-width: 900px;
+	width: 900px;
 	margin: 0;
 	height: 500px;
 	position: absolute;
@@ -272,12 +273,12 @@ width: 900px;
 	transform: translate(-50%, -50%);
 }
 
-.signupfirst{
-  outline:none !important;
+.signupfirst {
+	outline: none !important;
 
 	position: absolute;
-  bottom: 350px;
-  left: 21%;
+	bottom: 350px;
+	left: 21%;
 
 	width: 430px;
 
@@ -295,11 +296,11 @@ width: 900px;
 	border-radius: 10px;
 	border: 1px solid rgb(183, 187, 190);
 }
-.signuplast{
-  outline:none !important;
+.signuplast {
+	outline: none !important;
 	position: absolute;
 	bottom: 290px;
-  left: 21%;
+	left: 21%;
 
 	width: 430px;
 
@@ -317,11 +318,11 @@ width: 900px;
 	border-radius: 10px;
 	border: 1px solid rgb(183, 187, 190);
 }
-.signupuser{
-  outline:none !important;
+.signupuser {
+	outline: none !important;
 	position: absolute;
 	bottom: 220px;
-  left: 21%;
+	left: 21%;
 
 	width: 430px;
 
@@ -339,11 +340,11 @@ width: 900px;
 	border-radius: 10px;
 	border: 1px solid rgb(183, 187, 190);
 }
-.signupass{
-  outline:none !important;
+.signupass {
+	outline: none !important;
 	position: absolute;
 	bottom: 150px;
-  left: 21%;
+	left: 21%;
 
 	width: 430px;
 
@@ -361,9 +362,8 @@ width: 900px;
 	border-radius: 10px;
 	border: 1px solid rgb(183, 187, 190);
 }
-.signupbtn{
-
-  outline:none !important;
+.signupbtn {
+	outline: none !important;
 	position: absolute;
 	bottom: 10px;
 	height: 70px;
@@ -378,14 +378,9 @@ width: 900px;
 	background-color: #64738056;
 	border-radius: 50px;
 	box-shadow: 10px 25px 10px -9px rgba(0, 0, 0, 0.25);
-
 }
 
-
-
-
-
-/* END OF SIGNUP FORM */
+/* ==========================END OF SIGNUP FORM ==============================*/
 
 .logo {
 	/* border: 3px solid #73AD21; */
@@ -394,79 +389,13 @@ width: 900px;
 	right: 152%;
 }
 
-.form-container {
-	position: absolute;
-	top: 10em;
-	width: 300px;
-	padding: 40px;
-	background-color: #3b393956;
-	border-radius: 10px;
-	box-shadow: 10px 10px 43px -9px rgba(0, 0, 0, 0.25);
-	border-bottom: 5px solid rgba(0, 0, 0, 0.25);
-	border-right: 1px solid rgba(0, 0, 0, 0.25);
-	right: 10em;
-}
-.sign {
-	position: absolute;
-	top: 25em;
-	z-index: 1;
-	right: 1em;
-}
-.exit {
-	top: 0px;
-	position: absolute;
-	margin-top: 1em;
-	z-index: 1;
-	margin-left: -1em;
-}
-.buttons {
-	background-color: #a39d9dd2;
-	border-radius: 5px;
-	box-shadow: 10px 10px 43px -9px rgba(163, 161, 161, 0.144);
-}
-.user-input {
-	border: none;
-	border-bottom: 1px solid #fff;
-	font-size: 28px;
-	letter-spacing: 3px;
-	background: transparent;
-	color: #fff;
-	padding: 0 0 10px 5px;
-	margin: 25px 0;
-	outline: none;
-}
 
-.user-input:focus {
-	border-bottom: 1px solid;
-	border-image: linear-gradient(to right, #00f260, #0575e6);
-	border-image-slice: 1;
-}
 
-.upload-btn-wrapper {
-	position: relative;
-	overflow: hidden;
-	display: inline-block;
-}
-
-.btn {
-	background-color: #3b393956;
-	border-radius: 5px;
-	box-shadow: 10px 10px 43px -9px rgba(0, 0, 0, 0.25);
-}
-
-.upload-btn-wrapper input[type='file'] {
-	font-size: 100px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0;
-}
-
-/* searchBar */
+/*============================= SEARCHBAR ========================================*/
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 
-/* Base styling */
+
 
 .search__container {
 	padding-top: 0px;
@@ -513,6 +442,139 @@ width: 900px;
 	border-radius: 0;
 	background-position: 100% center;
 }
+/* =================END OF SEARCH FORM================================= */
+
+/* ===============PRODUCT FORM================================== */
+.productForm {
+	width: 900px;
+	height: 500px;
+	margin: auto;
+	/* border: 3px solid #73ad21; */
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+.title{
+	outline: none !important;
+	position: absolute;
+	bottom: 450px;
+	left: 21%;
+
+	width: 430px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #8d8787;
+	background-color: rgb(183, 187, 190);
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190);
+}
+
+.typeof{
+	outline: none !important;
+	position: absolute;
+	bottom: 350px;
+	left: 21%;
+
+	width: 430px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #8d8787;
+	background-color: rgb(183, 187, 190);
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190);
+}
+
+.category{
+	outline: none !important;
+	position: absolute;
+	bottom: 250px;
+	left: 21%;
+
+	width: 430px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #8d8787;
+	background-color: rgb(183, 187, 190);
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190);
+}
+
+.price{
+	outline: none !important;
+	position: absolute;
+	bottom: 150px;
+	left: 21%;
+
+	width: 430px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #8d8787;
+	background-color: rgb(183, 187, 190);
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190);
+}
+
+.filebtn{
+	position: absolute;
+	bottom: 100px;
+	left: 40%;
+}
+
+.filesbm{
+
+
+	outline: none !important;
+	position: absolute;
+	bottom: 1px;
+	height: 70px;
+
+	width: 200px;
+	border: 1px solid transparent;
+
+
+	left: 35%;
+	font-size: 20px;
+
+	background-color: #64738056;
+	border-radius: 50px;
+	box-shadow: 10px 25px 10px -9px rgba(0, 0, 0, 0.25);
+}
+
 
 /* FOR THE IMAGES IN /PRODUCT */
 /* -------------------------------- */
@@ -559,4 +621,5 @@ img {
 
 
 /* -------------------------------- */
+
 

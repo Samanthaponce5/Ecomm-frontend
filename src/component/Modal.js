@@ -5,7 +5,7 @@ class Modal extends Component {
     render() {
         return (
             <div>
-                hello Modal
+              Something
             </div>
         );
     }

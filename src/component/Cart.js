@@ -8,6 +8,7 @@ class Cart extends Component {
                     <CartCard key={index} product={cart} />
                 ))}
                 Total: {this.props.total}
+                <button> Checkout </button>
             </div>
         )
     }

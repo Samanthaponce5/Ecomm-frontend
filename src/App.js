@@ -10,7 +10,9 @@ import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
 	state = {
-		user: null,
+    user: null,
+    CurrentProduct:null,
+    CurrentImage:[]
 	}
 
 	setUser = (user) => {
@@ -21,7 +23,16 @@ class App extends Component {
 		e.preventDefault()
 		this.setUser(null)
 		// this.history.push('/login');
-	};
+  };
+  
+  //========products============
+  updateCurrentProduct = (data) => {
+    this.setState({
+      CurrentProduct: data.product,
+      CurrentImage: data.image_url
+    })
+  }
+  //====================
 
 	render() {
 		return (

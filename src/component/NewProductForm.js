@@ -73,17 +73,17 @@ export default class NewProductForm extends Component {
       return (
         <form className='productForm' onSubmit={this.handleSubmit}>
 
-                <label>Title</label>
-                <input type='text' name='title' value={this.state.title} onChange={this.handleOnChange} /><br />
-                <label>Type</label>
-                <input type='text' name='typeOf' value={this.state.typeOf} onChange={this.handleOnChange} /><br />
-                <label>Category</label>
-                <input type='text' name='category' value={this.state.category} onChange={this.handleOnChange} /><br />
-                <label>Price</label>
-                <input type='text' name='price' value={this.state.price} onChange={this.handleOnChange} /><br />
-                <label>Upload product</label>
-                <input type='file' name='image' onChange={this.handleOnChange} /><br />
-                <input type='submit' value='upload product' />
+                
+                <input className='title' placeholder='TITLE' type='text' name='title' value={this.state.title} onChange={this.handleOnChange} /><br />
+         
+                <input className='typeof' type='text' placeholder='TYPE' name='typeOf' value={this.state.typeOf} onChange={this.handleOnChange} /><br />
+            
+                <input className='category' type='text' placeholder='CATEGORY' name='category' value={this.state.category} onChange={this.handleOnChange} /><br />
+              
+                <input className='price' type='text' placeholder='PRICE' name='price' value={this.state.price} onChange={this.handleOnChange} /><br />
+             
+                <input className='filebtn' type='file' name='image' onChange={this.handleOnChange} /><br />
+                <input className='filesbm' type='submit' value='upload product' />
 
 
             </form>

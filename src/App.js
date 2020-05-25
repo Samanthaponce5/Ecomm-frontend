@@ -30,7 +30,8 @@ class App extends React.Component {
       CurrentImage: [],
       products: [],
       cart: [],
-      total: 0
+      total: 0,
+      orders:[]
     }
   }
   componentDidMount() {
@@ -73,10 +74,27 @@ class App extends React.Component {
       CurrentImage: data.image_url
     })
   }
-
+// CREATES ORDER FOR EACH ITEM, THAT'S HOW BACKEND IS SETUP
   toggleCheckout = (cartArray) => {
-    
-  } 
+    cartArray.map((product) => (
+      fetch(ordersURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          "confirmation_number": Math.floor(Math.random()*1000),
+          "product_id": product.id,
+          "user_id": this.state.user.id
+        })
+      })
+      .then(resp => resp.json())
+      .then(order => {
+        this.setState({ orders:[...this.state.orders, order] });
+      })
+    ))
+  }
   //====================
 
   render() {

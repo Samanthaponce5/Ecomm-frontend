@@ -7,6 +7,7 @@ class Cart extends Component {
                 {this.props.cart.map((cart,index) => (
                     <CartCard key={index} product={cart} />
                 ))}
+                Total: {this.props.total}
             </div>
         )
     }

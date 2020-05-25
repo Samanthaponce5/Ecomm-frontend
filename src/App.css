@@ -60,6 +60,7 @@ nav {
 	transform-origin: top;
 	transition: transform 400ms ease-in-out;
 	border-radius: 25px;
+	z-index: 2
 }
 nav ul {
 	list-style: none;
@@ -520,23 +521,40 @@ width: 900px;
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0 4px;
+	border: 3px solid #8AC007;
+	/* position: absolute;
+	width: 50%;
+	bottom: 10px; */
+	margin-top: 250px;
 }
+
+/* .products{
+	border: 3px solid #73ad21;
+	margin-top: 300px;
+	z-index: -1
+} */
 
 .column {
 	flex: 25%;
 	max-width: 25%;
 	padding: 0 4px;
+	border: 3px solid #8AC007;
+
 }
 
 .column img {
 	margin-top: 8px;
 	vertical-align: middle;
 	width: 100%;
+	border: 3px solid #8AC007;
+
 }
 img {
 	width: 200px;
 	height: 400px;
 	object-fit: cover ;
+	border: 3px solid #8AC007;
+
 }
 
 

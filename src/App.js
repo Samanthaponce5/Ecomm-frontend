@@ -2,20 +2,20 @@ import React, { Component, Fragment } from 'react';
 import NewProductForm from './component/NewProductForm';
 import './App.css';
 import Login from './component/Login';
-
-
-
-  
-  //========products============
-
-import { withRouter } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom';
+import { withRouter, BrowserRouter } from 'react-router-dom';
 import NavBar from './component/NavBar'
 import Profile from './component/Profile'
 import Home from './component/Home'
 import CreateAccount from './component/CreateAccount'
-import { Route, Switch, Redirect } from 'react-router-dom';
 import Cart from './component/Cart'
 import Modal from './component/Modal'
+
+
+
+
+
+
 // import Products from './component/Products';
 
 let productsURL = 'http://localhost:4000/products'
@@ -76,6 +76,7 @@ class App extends React.Component {
   //====================
 
 	render() {
+    console.log(this.state)
 		return (
 			<BrowserRouter>
 				<NavBar

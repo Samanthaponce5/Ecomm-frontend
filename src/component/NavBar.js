@@ -29,7 +29,7 @@ render(){
                 
                ) :(
                 <>
-                <li onClick={this.props.logout}><Link >Log out</Link></li>
+                <li onClick={this.props.logout}><Link to='#'>Log out</Link></li>
                 <li className="welcome"><Link to='#'>Welcome, {this.props.user.username}</Link></li>
                 </>
                )}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
-export default class CreateAccount extends Component{
+class CreateAccount extends Component{
 
     constructor(){
         super()
@@ -41,6 +41,11 @@ export default class CreateAccount extends Component{
            body: JSON.stringify(user)
        })
        .then(resp=>resp.json())
+       .then(data=>{
+    //    console.log(data.user)
+        this.props.setUser(data)
+        this.props.history.push('/home')
+     })
 
         this.setState({
 
@@ -83,3 +88,5 @@ export default class CreateAccount extends Component{
         )
     }
 }
+
+export default withRouter(CreateAccount)

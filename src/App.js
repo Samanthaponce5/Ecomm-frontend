@@ -33,7 +33,7 @@ class App extends Component {
 					<Route
 						exact
 						path="/create_account"
-						render={(props) => <CreateAccount routerProps={props} />}
+						render={(props) => <CreateAccount routerProps={props} setUser={this.setUser}  user={this.state.user}/>}
 					/>
 					<Route
 						exact

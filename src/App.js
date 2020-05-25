@@ -62,6 +62,10 @@ class App extends React.Component {
     })
   }
 
+  addToCart = (product)=>{
+    this.setState({ cart: [...this.state.cart,product] });
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -73,7 +77,7 @@ class App extends React.Component {
           <Route exact path='/login' render={(props) => <Login setCurrentUser={this.setCurrentUser} routerProps={props} />} />
           <Route exact path='/create_account' render={(props) => <CreateAccount updateCurrentUser={this.updateCurrentUser} routerProps={props} />} />
           <Route exact path='/sellProduct' render={(props) => <NewProductForm currentUser={this.state.CurrentUser} updateCurrentProduct={this.updateCurrentProduct} routerProps={props} />} />
-          <Route exact path='/product' render={(props) => <Products currentUser={this.state.CurrentUser} currentProduct={this.state.CurrentProduct} currentImage={this.state.CurrentImage} routerProps={props} products={this.state.products}/>} />
+          <Route exact path='/product' render={(props) => <Products currentUser={this.state.CurrentUser} currentProduct={this.state.CurrentProduct} currentImage={this.state.CurrentImage} routerProps={props} products={this.state.products} addToCart={this.addToCart}/>} />
 
 
           <Route exact path='/profile' render={(props) => {

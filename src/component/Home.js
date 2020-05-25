@@ -4,7 +4,6 @@ import Products from './Products';
 export default class Home extends Component{
 
     render(){
-        console.log(this.props)
         return(
             <div className='products'>
                 <Products products={this.props.products} addToCart={this.props.addToCart}/>

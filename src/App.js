@@ -9,6 +9,7 @@ import Home from './component/Home'
 import CreateAccount from './component/CreateAccount'
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Cart from './component/Cart'
+import Modal from './component/Modal'
 // import Products from './component/Products';
 
 let productsURL = 'http://localhost:4000/products'
@@ -22,7 +23,8 @@ class App extends React.Component {
       CurrentProduct: null,
       CurrentImage: [],
       products: [],
-      cart: []
+      cart: [],
+      total: 0
     }
   }
   componentDidMount() {
@@ -64,23 +66,25 @@ class App extends React.Component {
   }
 
   addToCart = (product) => {
-    this.setState({ cart: [...this.state.cart, product] });
+    this.setState({
+      cart: [...this.state.cart, product],
+      total: this.state.total + parseFloat(product.price)
+    });
   }
 
   render() {
     console.log(this.state)
     return (
       <Fragment>
-        <div>
         <NavBar currentUser={this.state.CurrentUser} logout={this.logout} />
-        </div>
+        <Modal />
         <Switch>
           {/* <Route exact path='/' component={Home} /> */}
           <Route exact path='/' render={(props) => <Home routerProps={props} products={this.state.products} addToCart={this.addToCart} />} />
           <Route exact path='/login' render={(props) => <Login setCurrentUser={this.setCurrentUser} routerProps={props} />} />
           <Route exact path='/create_account' render={(props) => <CreateAccount updateCurrentUser={this.updateCurrentUser} routerProps={props} />} />
           <Route exact path='/sellProduct' render={(props) => <NewProductForm currentUser={this.state.CurrentUser} updateCurrentProduct={this.updateCurrentProduct} routerProps={props} />} />
-          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart}/>} />
+          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} />} />
 
           {/* <Route exact path='/product' render={(props) => <Products currentUser={this.state.CurrentUser} currentProduct={this.state.CurrentProduct} currentImage={this.state.CurrentImage} routerProps={props} products={this.state.products} addToCart={this.addToCart}/>} /> */}
           <Route exact path='/profile' render={(props) => {

@@ -7,7 +7,7 @@ export default class Home extends Component{
         console.log(this.props)
         return(
             <div className='products'>
-                <Products products={this.props.products} addToCard={this.props.addToCard}/>
+                <Products products={this.props.products} addToCart={this.props.addToCart}/>
             </div>
         )
     }

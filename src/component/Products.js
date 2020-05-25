@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import ProductCard from './ProductCard.js'
 
-export default class Products extends Component{
+export default class Products extends Component {
 
-    render(){
-        return(
-            <div>
-                <h3>These are the products</h3>
-
-        <img src={`http://localhost:4000/${this.props.currentImage}`}/>
+    render() {
+        return (
+            <div className='row'>
+                {this.props.products.map(product => (
+                    <ProductCard key={product.id} product={product}/>
+                ))}
             </div>
         )
     }

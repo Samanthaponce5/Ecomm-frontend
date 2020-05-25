@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 class CartCard extends Component {
     render() {
-        console.log(this.props.cart)
+        console.log(this.props.product)
         return (
             <div>
-                Here CartCard 
+                {this.props.product.title}
+                {this.props.product.price}
             </div>
         );
     }

@@ -1,14 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
-export default class Login extends React.Component {
-	constructor() {
-		super();
-		this.state = {
+ class Login extends React.Component {
+	state = {
 			username: '',
-			password: '',
+			password: ''
 		};
-	}
+	
 
 	handleOnChange = (event) => {
 		this.setState({
@@ -19,10 +17,10 @@ export default class Login extends React.Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
         
-        let user ={
-            first_name: this.state.username, 
-            password: this.state.password
-        }
+        // let user ={
+        //     first_name: this.state.username, 
+        //     password: this.state.password
+        // }
 
         fetch('http://localhost:4000/login',{
             method:'POST',
@@ -30,12 +28,13 @@ export default class Login extends React.Component {
                 'Content-Type':'application/json',
                 'Accept':'application/json'
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(this.state)
         })
         .then(response=>response.json())
         .then(data=>{
-            this.props.setCurrentUser(data)
-            // this.props.routerProps.history.push('/profile')
+		   localStorage.setItem('userId', data.user.id)
+		   this.props.setUser(data.user)
+		   this.props.history.push('/home')
         })
 		this.setState({
 			username: '',
@@ -81,3 +80,5 @@ export default class Login extends React.Component {
 		)
 	}
 }
+
+export default withRouter(Login)

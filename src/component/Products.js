@@ -7,7 +7,7 @@ export default class Products extends Component{
             <div>
                 <h3>These are the products</h3>
 
-        <img src={`http://localhost:4000/${this.props.currentImage}`}/>
+        {/* <img src={`http://localhost:4000/${this.props.currentImage}`}/> */}
             </div>
         )
     }

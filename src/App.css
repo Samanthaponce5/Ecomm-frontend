@@ -514,3 +514,15 @@ width: 900px;
 }
 
 /* login */
+.welcome{
+	position: absolute;
+	/* border-style: dashed; */
+	z-index:-999;
+	margin: 0;
+
+   
+    top: 65%;
+    left: 4%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}

@@ -2,18 +2,51 @@ import React, { Component, Fragment } from 'react';
 import NewProductForm from './component/NewProductForm';
 import './App.css';
 import Login from './component/Login';
-import { withRouter, BrowserRouter } from 'react-router-dom';
-import NavBar from './component/NavBar';
-import Home from './component/Home';
-import CreateAccount from './component/CreateAccount';
-import { Route, Switch } from 'react-router-dom';
 
-class App extends Component {
-	state = {
-    user: null,
+
+
+  
+  //========products============
+
+import { withRouter } from 'react-router-dom'
+import NavBar from './component/NavBar'
+import Profile from './component/Profile'
+import Home from './component/Home'
+import CreateAccount from './component/CreateAccount'
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Cart from './component/Cart'
+import Modal from './component/Modal'
+// import Products from './component/Products';
+
+let productsURL = 'http://localhost:4000/products'
+
+class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+     user: null,
     CurrentProduct:null,
-    CurrentImage:[]
-	}
+    CurrentImage:[],
+      products: [],
+      cart: [],
+      total: 0
+    }
+  }
+  componentDidMount() {
+    fetch(productsURL)
+      .then(resp => resp.json())
+      .then(products => {
+        this.setState({ products });
+      })
+  }
+
+  updateCurrentUser = (data) => {
+    this.setState({
+      CurrentUser: data.user,
+    })
+  }
+
 
 	setUser = (user) => {
 		this.setState({ user: user })
@@ -24,8 +57,16 @@ class App extends Component {
 		this.setUser(null)
 		// this.history.push('/login');
   };
-  
-  //========products============
+
+  addToCart = (product) => {
+    this.setState({
+      cart: [...this.state.cart, product],
+      total: this.state.total + parseFloat(product.price)
+    });
+  }
+
+
+
   updateCurrentProduct = (data) => {
     this.setState({
       CurrentProduct: data.product,
@@ -64,7 +105,7 @@ class App extends Component {
 							/>
 						)}
 					/>
-
+     <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} />} />
 					{this.state.user === null ? (
 						<Route
 							path="/login"
@@ -82,7 +123,7 @@ class App extends Component {
 							render={() => {
 								return (
 									<div>
-										<Home user={this.state.user} setUser={this.setUser} />
+										<Home user={this.state.user} setUser={this.setUser}  products={this.state.products} addToCart={this.addToCart} />
 									</div>
 								);
 							}}
@@ -98,21 +139,8 @@ export default withRouter(App);
 
 
 
-//  <Fragment>
 
-// <NavBar currentUser={this.state.CurrentUser} logout={this.logout} />
-// <Switch>
-//   <Route exact path='/' component={Home}/>
-//   <Route exact path='/login' render={(props)=><Login setCurrentUser={this.setCurrentUser}  routerProps={props}/>} />
-//   <Route exact path='/create_account' render={(props)=> <CreateAccount updateCurrentUser={this.updateCurrentUser} routerProps={props}/>}/>
-//   <Route exact path='/sellProduct' render={(props)=> <NewProductForm currentUser={this.state.CurrentUser} updateCurrentProduct={this.updateCurrentProduct} routerProps={props}/>}/>
 
-//   <Route exact path='/product' render={(props)=> <Products currentUser={this.state.CurrentUser}  currentProduct={this.state.CurrentProduct} currentImage={this.state.CurrentImage} routerProps={props}/>}/>
-
-//   <Route exact path='/profile' render={(props)=>{
-//     return this.state.CurrentUser ?(
-
-//       <Profile currentUser={this.state.CurrentUser} />
 
 //     ) : (
 //       <Login setCurrentUser={this.setCurrentUser}/>

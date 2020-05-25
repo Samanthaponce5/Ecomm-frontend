@@ -574,3 +574,34 @@ nav a:hover {
 	box-shadow: 10px 25px 10px -9px rgba(0, 0, 0, 0.25);
 }
 
+
+/* FOR THE IMAGES IN /PRODUCT */
+/* -------------------------------- */
+	/* button needs to align below the image */
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4px;
+}
+
+.column {
+	flex: 25%;
+	max-width: 25%;
+	padding: 0 4px;
+}
+
+.column img {
+	margin-top: 8px;
+	vertical-align: middle;
+	width: 100%;
+}
+img {
+	width: 200px;
+	height: 400px;
+	object-fit: cover ;
+}
+
+
+/* -------------------------------- */
+
+

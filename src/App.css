@@ -825,7 +825,7 @@ img {
   }
   
   .wrapper:hover .image-wrapper {
-	filter: blur(5px); /* the actual blurring */
+	filter: blur(1px); /* the actual blurring */
 	transform: scale(1.03); /* a way of hiding the blurred edges */ 
   }
   .product-pic{
@@ -842,3 +842,6 @@ img {
 	  z-index: -999;
 
   }
+  .hi{
+border: solid white;
+z-index: 999;  }

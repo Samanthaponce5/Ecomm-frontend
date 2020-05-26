@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-
+import {withRouter } from 'react-router-dom';
 class ProductCard extends Component {
-
+    handleClick=()=>{
+        this.props.routerProps.history.push(`/products/${this.props.product.id}`)
+    }
     render() {
         return (
             <>
@@ -9,7 +11,7 @@ class ProductCard extends Component {
             <div  class="grid-item-products">
                  <div className="wrapper">      
                  <div className="image-wrapper">
-                <img   className="product-pic" src={this.props.product.image} alt="img" />
+                <img onClick={this.handleClick}  className="product-pic" src={this.props.product.image} alt="img" />
                 </div>
          </div>
              
@@ -23,4 +25,4 @@ class ProductCard extends Component {
     }
 }
 
-export default ProductCard;
+export default withRouter(ProductCard);

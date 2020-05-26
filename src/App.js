@@ -9,7 +9,6 @@ import Profile from './component/Profile'
 import Home from './component/Home'
 import CreateAccount from './component/CreateAccount'
 import Cart from './component/Cart'
-import Modal from './component/Modal'
 
 
 
@@ -106,6 +105,7 @@ class App extends React.Component {
           setUser={this.setUser}
           logout={this.logout}
         />
+      
         <Switch>
           <Route
             exact

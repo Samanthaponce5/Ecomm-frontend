@@ -74,7 +74,7 @@ export default class NewProductForm extends Component {
         <form className='productForm' onSubmit={this.handleSubmit}>
 
                 
-                <input className='title' placeholder='TITLE' type='text' name='title' value={this.state.title} onChange={this.handleOnChange} /><br />
+                <input className='titleProduct' placeholder='TITLE' type='text' name='title' value={this.state.title} onChange={this.handleOnChange} /><br />
          
                 <input className='typeof' type='text' placeholder='TYPE' name='typeOf' value={this.state.typeOf} onChange={this.handleOnChange} /><br />
             

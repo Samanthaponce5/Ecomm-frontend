@@ -6,11 +6,14 @@ export default class Products extends Component {
 
     render() {
         return (
-            <div className='row'>
+           
+
+            <div class="grid-container-products">
+               
                 {this.props.products.map(product => (
                     <ProductCard key={product.id} product={product} addToCart={this.props.addToCart}/>
                 ))}
-
+                 
             </div>
         )
     }

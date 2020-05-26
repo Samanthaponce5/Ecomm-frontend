@@ -8,36 +8,38 @@ export default class NavBar extends Component {
 	render() {
 		return (
 			<header className="top">
-				<h1 className="logo">Logo</h1>
 
-				<nav>
+				<nav className='webnav'>
+
 					<ul>
+						<li className="logo">Picology</li>
+
 						<li className="homeLink">
-							<Link to="/">Home</Link>
+							<Link to="/home">Home</Link>
 						</li>
 
 						<li className="sellContentLink">
 							<Link to="/sellProduct">Sell Content</Link>
 						</li>
 						<Search />
-						<li>
+						<li className='cartlink'>
       
-							<Link to="#">Cart</Link>
+							<Link to="/cart">Cart</Link>
 						</li>
 						<div className="nav-underline"></div>
 						<div className="nav-underline2"></div>
 						{this.props.user === null ? (
-							<li>
+							<li className='loglink'>
 								<Link to="/login">Login</Link>
 							</li>
 						) : (
 							<>
-								<li onClick={this.props.logout}>
+								<li className='loglink' onClick={this.props.logout}>
 									<Link to="#">Log out</Link>
 								</li>
 								<li className="welcome">
 									<Link to="#">
-										Welcome,{'  '} {this.props.user.username}
+										Welcome,<br/> {this.props.user.username}
 									</Link>
 								</li>
 							</>

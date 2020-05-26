@@ -15,7 +15,7 @@ import ViewProduct from './component/ViewProduct';
 
 let productsURL = 'http://localhost:4000/products'
 let ordersURL = 'http://localhost:4000/orders'
-let allProducts 
+let allProducts
 class App extends React.Component {
   constructor() {
     super()
@@ -25,10 +25,11 @@ class App extends React.Component {
       CurrentProduct: null,
       CurrentImage: [],
       products: [],
-      filtered:null,
+      filtered: null,
       cart: [],
       total: 0,
-      orders:[]
+      orders: [],
+      search: ""
     }
   }
   componentDidMount() {
@@ -72,7 +73,7 @@ class App extends React.Component {
       CurrentImage: data.image_url
     })
   }
-// CREATES ORDER FOR EACH ITEM, THAT'S HOW BACKEND IS SETUP
+  // CREATES ORDER FOR EACH ITEM, THAT'S HOW BACKEND IS SETUP
   toggleCheckout = (cartArray) => {
     cartArray.map((product) => (
       fetch(ordersURL, {
@@ -82,23 +83,23 @@ class App extends React.Component {
           Accept: 'application/json'
         },
         body: JSON.stringify({
-          "confirmation_number": Math.floor(Math.random()*1000),
+          "confirmation_number": Math.floor(Math.random() * 1000),
           "product_id": product.id,
           "user_id": this.state.user.id
         })
       })
-      .then(resp => resp.json())
-      .then(order => {
-        this.setState({ orders:[...this.state.orders, order] });
-      })
+        .then(resp => resp.json())
+        .then(order => {
+          this.setState({ orders: [...this.state.orders, order] });
+        })
     ))
   }
   //====================
   // FILTERING METHODS BELOW
 
-  filterNature=()=>{
-    let natureFilter = this.state.products.filter(product =>{
-      if(product.type_of ==='Nature'){
+  filterNature = () => {
+    let natureFilter = this.state.products.filter(product => {
+      if (product.type_of === 'Nature') {
         return product
       }
     })
@@ -107,21 +108,21 @@ class App extends React.Component {
     })
   }
 
-  filterCity=()=>{
-    let cityFilter = this.state.products.filter(product =>{
-      if(product.type_of ==='City'){
+  filterCity = () => {
+    let cityFilter = this.state.products.filter(product => {
+      if (product.type_of === 'City') {
         return product
       }
     })
-    
+
     this.setState({
       filtered: cityFilter
     })
   }
 
-  filterAerial=()=>{
-    let aerialFilter = this.state.products.filter(product =>{
-      if(product.type_of ==='Aerial'){
+  filterAerial = () => {
+    let aerialFilter = this.state.products.filter(product => {
+      if (product.type_of === 'Aerial') {
         return product
       }
     })
@@ -129,19 +130,38 @@ class App extends React.Component {
       filtered: aerialFilter
     })
   }
-    //====================
-
+  //====================
+  // SEARCH METHODS BELOW
+  searchChange = (event) => {
+    this.setState({ search: event.target.value })
+  }
 
   render() {
- 
+    // let searchFilter = this.state.products.filter(product => {
+    //   return product.category.toLowerCase().includes(this.state.search)
+    // })
+    let searchFilter
+
+    if (this.state.filtered) {
+      searchFilter = this.state.filtered.filter(product => {
+        return product.category.toLowerCase().includes(this.state.search)
+      })
+    } else {
+      searchFilter = this.state.products.filter(product => {
+        return product.category.toLowerCase().includes(this.state.search)
+      })
+    }
+    console.log(searchFilter)
     return (
       <BrowserRouter>
         <NavBar
           user={this.state.user}
           setUser={this.setUser}
           logout={this.logout}
+          search={this.state.search}
+          searchChange={this.searchChange}
         />
-      
+
         <Switch>
           <Route
             exact
@@ -197,7 +217,16 @@ class App extends React.Component {
                 render={(props) => {
                   return (
                     <div>
-                      <Home  routerprops={props} user={this.state.user} setUser={this.setUser} products={this.state.filtered===null? this.state.products: this.state.filtered} addToCart={this.addToCart} filterNature={this.filterNature} filterCity={this.filterCity} filterAerial={this.filterAerial}/>
+                      <Home
+                        user={this.state.user}
+                        setUser={this.setUser}
+                        products={this.state.search !== "" ? searchFilter :
+                          this.state.filtered !== null ? this.state.filtered :
+                            this.state.products}
+                        addToCart={this.addToCart}
+                        filterNature={this.filterNature}
+                        filterCity={this.filterCity}
+                        filterAerial={this.filterAerial} />
                     </div>
                   );
                 }}

@@ -21,7 +21,7 @@ export default class NavBar extends Component {
 						<li className="sellContentLink">
 							<Link to="/sellProduct">Sell Content</Link>
 						</li>
-						<Search />
+						<Search search={this.props.search} searchChange={this.props.searchChange}/>
 						<li className='cartlink'>
       
 							<Link to="/cart">Cart</Link>

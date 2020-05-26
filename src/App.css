@@ -1,6 +1,7 @@
 /* BACKROUND */
 body {
 	background-color: rgb(0, 0, 0);
+	color: #ffffff; 
 }
 
 /* get rid of purple link outline */
@@ -472,7 +473,7 @@ left: -150%;
 .search__input:hover,
 .search__input:focus {
 	/* capitalizes user input */
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 
 	outline: 0;
 	border: 1px solid transparent;
@@ -825,7 +826,7 @@ img {
   }
   
   .wrapper:hover .image-wrapper {
-	filter: blur(5px); /* the actual blurring */
+	filter: blur(1px); /* the actual blurring */
 	transform: scale(1.03); /* a way of hiding the blurred edges */ 
   }
   .product-pic{
@@ -842,3 +843,61 @@ img {
 	  z-index: -999;
 
   }
+  /* ==========View for indivisual product========================= */
+
+ /* .img-wrapper {  
+	width: 400px;
+	height: 400px;
+	overflow: hidden; 
+  } */
+  
+  .inner-img {
+	position: relative;
+	width:  500px;
+    height: 500px;
+	object-fit: cover;  
+	left: 30em;
+	transition: 0.3s;
+  }
+  
+  .inner-img:hover {
+	transform: scale(1.1);
+  }
+  
+  /* Other styling elements, that are not necessary for the example */
+  
+  .img-wrapper {
+	display: inline-block;
+	box-sizing: border-box;
+
+  }
+/*=============== img cart================== */
+
+.imgcart{
+	
+	position: relative;
+	width:  100px;
+    height: 100px;
+	object-fit: cover;  
+	left: 3em;
+	/* border:solid white; */
+	
+}
+
+.imgcartholder{
+	border:solid white;
+	position: relative;
+	width:  700px;
+    height: 300px;
+	left: 30em;
+	margin-top: 70px;
+
+}
+
+
+
+
+
+
+
+  

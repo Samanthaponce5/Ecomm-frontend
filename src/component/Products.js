@@ -8,10 +8,10 @@ export default class Products extends Component {
         return (
            
 
-            <div class="grid-container-products">
+            <div className="grid-container-products">
                
                 {this.props.products.map(product => (
-                    <ProductCard key={product.id} product={product} addToCart={this.props.addToCart}/>
+                    <ProductCard key={product.id} product={product} addToCart={this.props.addToCart} routerprops={this.props.routerprops}/>
                 ))}
                  
             </div>

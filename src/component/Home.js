@@ -5,6 +5,7 @@ import Products from './Products';
 export default class Home extends Component {
 
     render() {
+        console.log(this.props)
         return (
             <>
 
@@ -38,11 +39,11 @@ export default class Home extends Component {
                 </div>
 
 
-          
-            <div className="products-container">
-                <Products user={this.props.user} products={this.props.products} addToCart={this.props.addToCart} routerprops={this.props.routerprops}/>
-            </div>
-  </>
+
+                <div className="products-container">
+                    <Products user={this.props.user} products={this.props.products} addToCart={this.props.addToCart} routerprops={this.props.routerprops} />
+                </div>
+            </>
 
         )
     }

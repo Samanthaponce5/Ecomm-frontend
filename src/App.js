@@ -153,7 +153,7 @@ class App extends React.Component {
         return product.category.toLowerCase().includes(this.state.search)
       })
     }
-    // console.log(searchFilter)
+
     return (
       <BrowserRouter>
         <NavBar

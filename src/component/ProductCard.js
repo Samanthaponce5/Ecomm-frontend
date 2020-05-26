@@ -9,16 +9,20 @@ class ProductCard extends Component {
         return (
             <>
 
+
                 <div className="grid-item-products">
                     <div className="wrapper">
                         <div className="image-wrapper">
                             <img onClick={this.handleClick} className="product-pic" src={this.props.product.image} alt="img" />
+
                         </div>
                     </div>
 
 
                     {/* <p>${this.props.product.price} </p> */}
-                    <button className="cart-btn" onClick={() => this.props.addToCart(this.props.product)}> Add to Cart </button>
+
+                    <button className="cart-btn" onClick={() => this.props.user? this.props.addToCart(this.props.product): alert('Please Login')}> Add to Cart </button>
+
                 </div>
             </>
 

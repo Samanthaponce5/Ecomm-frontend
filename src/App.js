@@ -178,18 +178,18 @@ class App extends React.Component {
             )}
           />
           <Route
-						exact
-						path="/products/:id"
-						render={(props) => (
-							<ViewProduct
-								user={this.state.user}
-								currentProduct={this.state.CurrentProduct}
-								currentImage={this.state.CurrentImage}
-								routerProps={props}
-								products={this.state.products}
-								addToCart={this.addToCart}
-							/>
-            )}/>
+            exact
+            path="/products/:id"
+            render={(props) => (
+              <ViewProduct
+                user={this.state.user}
+                currentProduct={this.state.CurrentProduct}
+                currentImage={this.state.CurrentImage}
+                routerProps={props}
+                products={this.state.products}
+                addToCart={this.addToCart}
+              />
+            )} />
 
           <Route
             exact
@@ -203,36 +203,38 @@ class App extends React.Component {
           />
           <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} total={this.state.total} />} />
           {/* {this.state.user === null ? ( */}
-            <Route
-              path="/login"
-              render={() => {
-                return (
-                  <div>
-                    <Login user={this.state.user} setUser={this.setUser} />
-                  </div>
-                );
-              }}
-            />
+          <Route
+            path="/login"
+            render={() => {
+              return (
+                <div>
+                  <Login user={this.state.user} setUser={this.setUser} />
+                </div>
+              );
+            }}
+          />
           {/* ) : ( */}
-              <Route
-                path="/home"
-                render={(props) => {
-                  return (
-                    <div>
-                      <Home
-                        user={this.state.user}
-                        setUser={this.setUser}
-                        products={this.state.search !== "" ? searchFilter :
-                          this.state.filtered !== null ? this.state.filtered :
-                            this.state.products}
-                        addToCart={this.addToCart}
-                        filterNature={this.filterNature}
-                        filterCity={this.filterCity}
-                        filterAerial={this.filterAerial} />
-                    </div>
-                  );
-                }}
-              />
+          <Route
+            path="/home"
+            render={(props) => {
+              return (
+                <div>
+                  <Home
+                    user={this.state.user}
+                    setUser={this.setUser}
+                    products={this.state.search !== "" ? searchFilter :
+                      this.state.filtered !== null ? this.state.filtered :
+                        this.state.products}
+                    addToCart={this.addToCart}
+                    filterNature={this.filterNature}
+                    filterCity={this.filterCity}
+                    filterAerial={this.filterAerial}
+                    routerprops={props}
+                  />
+                </div>
+              );
+            }}
+          />
             )}
         </Switch>
       </BrowserRouter>

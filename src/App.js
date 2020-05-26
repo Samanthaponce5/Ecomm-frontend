@@ -4,16 +4,12 @@ import './App.css';
 import Login from './component/Login';
 import { Route, Switch } from 'react-router-dom';
 import { withRouter, BrowserRouter } from 'react-router-dom';
-import NavBar from './component/NavBar'
-import Profile from './component/Profile'
-import Home from './component/Home'
-import CreateAccount from './component/CreateAccount'
-import Cart from './component/Cart'
-
-
-
-
-
+import NavBar from './component/NavBar';
+import Profile from './component/Profile';
+import Home from './component/Home';
+import CreateAccount from './component/CreateAccount';
+import Cart from './component/Cart';
+import ViewProduct from './component/ViewProduct';
 
 // import Products from './component/Products';
 
@@ -144,6 +140,8 @@ class App extends React.Component {
     // let searchFilter = this.state.products.filter(product => {
     //   return product.category.toLowerCase().includes(this.state.search)
     // })
+
+    console.log(this.state.total)
     let searchFilter
 
     if (this.state.filtered) {
@@ -155,7 +153,7 @@ class App extends React.Component {
         return product.category.toLowerCase().includes(this.state.search)
       })
     }
-    console.log(this.state.total)
+
     return (
       <BrowserRouter>
         <NavBar
@@ -176,8 +174,23 @@ class App extends React.Component {
                 setUser={this.setUser}
                 user={this.state.user}
               />
+
             )}
           />
+          <Route
+						exact
+						path="/products/:id"
+						render={(props) => (
+							<ViewProduct
+								user={this.state.user}
+								currentProduct={this.state.CurrentProduct}
+								currentImage={this.state.CurrentImage}
+								routerProps={props}
+								products={this.state.products}
+								addToCart={this.addToCart}
+							/>
+            )}/>
+
           <Route
             exact
             path="/sellProduct"
@@ -188,8 +201,8 @@ class App extends React.Component {
               />
             )}
           />
-          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} />} />
-          {this.state.user === null ? (
+          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} total={this.state.total} />} />
+          {/* {this.state.user === null ? ( */}
             <Route
               path="/login"
               render={() => {
@@ -200,10 +213,10 @@ class App extends React.Component {
                 );
               }}
             />
-          ) : (
+          {/* ) : ( */}
               <Route
                 path="/home"
-                render={() => {
+                render={(props) => {
                   return (
                     <div>
                       <Home
@@ -228,11 +241,6 @@ class App extends React.Component {
 }
 
 export default withRouter(App);
-
-
-
-
-
 
 //     ) : (
 //       <Login setCurrentUser={this.setCurrentUser}/>

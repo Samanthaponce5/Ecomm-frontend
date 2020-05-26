@@ -38,11 +38,12 @@ export default class Home extends Component {
                 </div>
 
 
+          
+            <div className="products-container">
+                <Products user={this.props.user} products={this.props.products} addToCart={this.props.addToCart} routerprops={this.props.routerprops}/>
+            </div>
+  </>
 
-                <div className="products-container">
-                    <Products user={this.props.user}products={this.props.products} addToCart={this.props.addToCart} />
-                </div>
-            </>
         )
     }
 }

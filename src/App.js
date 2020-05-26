@@ -155,7 +155,7 @@ class App extends React.Component {
         return product.category.toLowerCase().includes(this.state.search)
       })
     }
-    console.log(searchFilter)
+    console.log(this.state.total)
     return (
       <BrowserRouter>
         <NavBar

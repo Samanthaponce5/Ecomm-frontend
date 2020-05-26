@@ -40,7 +40,7 @@ export default class Home extends Component {
 
 
                 <div className="products-container">
-                    <Products products={this.props.products} addToCart={this.props.addToCart} />
+                    <Products user={this.props.user}products={this.props.products} addToCart={this.props.addToCart} />
                 </div>
             </>
         )

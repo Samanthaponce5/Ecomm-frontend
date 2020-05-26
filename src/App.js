@@ -96,6 +96,40 @@ class App extends React.Component {
   }
   //====================
 
+  filterNature=()=>{
+    let natureFilter = this.state.products.filter(product =>{
+      if(product.type_of ==='Nature'){
+        return product
+      }
+    })
+    this.setState({
+      products: natureFilter
+    })
+  }
+
+  filterCity=()=>{
+    let cityFilter = this.state.products.filter(product =>{
+      if(product.type_of ==='City'){
+        return product
+      }
+    })
+
+    this.setState({
+      products: cityFilter
+    })
+  }
+
+  filterAerial=()=>{
+    let aerialFilter = this.state.products.filter(product =>{
+      if(product.type_of ==='Aerial'){
+        return product
+      }
+    })
+    this.setState({
+      products: aerialFilter
+    })
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -146,7 +180,7 @@ class App extends React.Component {
                 render={() => {
                   return (
                     <div>
-                      <Home user={this.state.user} setUser={this.setUser} products={this.state.products} addToCart={this.addToCart} />
+                      <Home user={this.state.user} setUser={this.setUser} products={this.state.products} addToCart={this.addToCart} filterNature={this.filterNature} filterCity={this.filterCity} filterAerial={this.filterAerial}/>
                     </div>
                   );
                 }}

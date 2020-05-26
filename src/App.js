@@ -19,6 +19,7 @@ import Cart from './component/Cart'
 
 let productsURL = 'http://localhost:4000/products'
 let ordersURL = 'http://localhost:4000/orders'
+let allProducts 
 class App extends React.Component {
   constructor() {
     super()
@@ -28,6 +29,7 @@ class App extends React.Component {
       CurrentProduct: null,
       CurrentImage: [],
       products: [],
+      filtered:null,
       cart: [],
       total: 0,
       orders:[]
@@ -37,6 +39,7 @@ class App extends React.Component {
     fetch(productsURL)
       .then(resp => resp.json())
       .then(products => {
+        allProducts = products
         this.setState({ products });
       })
   }
@@ -95,6 +98,7 @@ class App extends React.Component {
     ))
   }
   //====================
+  // FILTERING METHODS BELOW
 
   filterNature=()=>{
     let natureFilter = this.state.products.filter(product =>{
@@ -103,7 +107,7 @@ class App extends React.Component {
       }
     })
     this.setState({
-      products: natureFilter
+      filtered: natureFilter
     })
   }
 
@@ -113,9 +117,9 @@ class App extends React.Component {
         return product
       }
     })
-
+    
     this.setState({
-      products: cityFilter
+      filtered: cityFilter
     })
   }
 
@@ -126,9 +130,11 @@ class App extends React.Component {
       }
     })
     this.setState({
-      products: aerialFilter
+      filtered: aerialFilter
     })
   }
+    //====================
+
 
   render() {
     console.log(this.state)
@@ -180,7 +186,7 @@ class App extends React.Component {
                 render={() => {
                   return (
                     <div>
-                      <Home user={this.state.user} setUser={this.setUser} products={this.state.products} addToCart={this.addToCart} filterNature={this.filterNature} filterCity={this.filterCity} filterAerial={this.filterAerial}/>
+                      <Home user={this.state.user} setUser={this.setUser} products={this.state.filtered===null? this.state.products: this.state.filtered} addToCart={this.addToCart} filterNature={this.filterNature} filterCity={this.filterCity} filterAerial={this.filterAerial}/>
                     </div>
                   );
                 }}

@@ -10,7 +10,7 @@ render(){
     return(
         <div className="search__container">
 
-        <input className="search__input" type="text" placeholder="Search"/>
+        <input className="search__input" type="text" placeholder="Search" value={this.props.search} onChange={this.props.searchChange}/>
     </div>
     )
 }

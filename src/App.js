@@ -141,10 +141,21 @@ class App extends React.Component {
   }
 
   render() {
-    let searchFilter = this.state.products.filter(product => {
-      return product.category.toLowerCase().includes(this.state.search)
-    })
-    console.log(this.state)
+    // let searchFilter = this.state.products.filter(product => {
+    //   return product.category.toLowerCase().includes(this.state.search)
+    // })
+    let searchFilter
+
+    if (this.state.filtered) {
+      searchFilter = this.state.filtered.filter(product => {
+        return product.category.toLowerCase().includes(this.state.search)
+      })
+    } else {
+      searchFilter = this.state.products.filter(product => {
+        return product.category.toLowerCase().includes(this.state.search)
+      })
+    }
+    console.log(searchFilter)
     return (
       <BrowserRouter>
         <NavBar
@@ -198,8 +209,8 @@ class App extends React.Component {
                       <Home
                         user={this.state.user}
                         setUser={this.setUser}
-                        products={this.state.filtered !== null ? this.state.filtered :
-                          this.state.search !== "" ? searchFilter :
+                        products={this.state.search !== "" ? searchFilter :
+                          this.state.filtered !== null ? this.state.filtered :
                             this.state.products}
                         addToCart={this.addToCart}
                         filterNature={this.filterNature}

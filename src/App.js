@@ -140,6 +140,8 @@ class App extends React.Component {
     // let searchFilter = this.state.products.filter(product => {
     //   return product.category.toLowerCase().includes(this.state.search)
     // })
+
+    console.log(this.state.total)
     let searchFilter
 
     if (this.state.filtered) {
@@ -151,7 +153,7 @@ class App extends React.Component {
         return product.category.toLowerCase().includes(this.state.search)
       })
     }
-    console.log(searchFilter)
+    // console.log(searchFilter)
     return (
       <BrowserRouter>
         <NavBar
@@ -199,7 +201,7 @@ class App extends React.Component {
               />
             )}
           />
-          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} />} />
+          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} total={this.state.total} />} />
           {/* {this.state.user === null ? ( */}
             <Route
               path="/login"

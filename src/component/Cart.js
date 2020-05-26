@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CartCard from './CartCard'
 class Cart extends Component {
     render() {
-        console.log(this.props)
+        console.log(this.props.total)
         return (
             <div className='cart'>
                 {this.props.cart.map((cart,index) => (

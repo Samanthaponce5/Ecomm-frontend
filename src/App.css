@@ -473,7 +473,7 @@ left: -150%;
 .search__input:hover,
 .search__input:focus {
 	/* capitalizes user input */
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 
 	outline: 0;
 	border: 1px solid transparent;
@@ -890,6 +890,7 @@ img {
 	width:  700px;
     height: 300px;
 	left: 30em;
+	margin-top: 70px;
 
 }
 

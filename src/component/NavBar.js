@@ -31,6 +31,7 @@ export default class NavBar extends Component {
 						{this.props.user === null ? (
 							<li className='loglink'>
 								<Link to="/login">Login</Link>
+								
 							</li>
 						) : (
 							<>

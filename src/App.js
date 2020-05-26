@@ -133,7 +133,7 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.state)
+ 
     return (
       <BrowserRouter>
         <NavBar
@@ -168,7 +168,7 @@ class App extends React.Component {
 								addToCart={this.addToCart}
 							/>
             )}/>
-            
+
           <Route
             exact
             path="/sellProduct"
@@ -180,7 +180,7 @@ class App extends React.Component {
             )}
           />
           <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} />} />
-          {this.state.user === null ? (
+          {/* {this.state.user === null ? ( */}
             <Route
               path="/login"
               render={() => {
@@ -191,13 +191,13 @@ class App extends React.Component {
                 );
               }}
             />
-          ) : (
+          {/* ) : ( */}
               <Route
                 path="/home"
                 render={(props) => {
                   return (
                     <div>
-                      <Home  routerProps={props} user={this.state.user} setUser={this.setUser} products={this.state.filtered===null? this.state.products: this.state.filtered} addToCart={this.addToCart} filterNature={this.filterNature} filterCity={this.filterCity} filterAerial={this.filterAerial}/>
+                      <Home  routerprops={props} user={this.state.user} setUser={this.setUser} products={this.state.filtered===null? this.state.products: this.state.filtered} addToCart={this.addToCart} filterNature={this.filterNature} filterCity={this.filterCity} filterAerial={this.filterAerial}/>
                     </div>
                   );
                 }}

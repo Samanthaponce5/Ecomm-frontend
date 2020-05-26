@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {withRouter } from 'react-router-dom';
 class ProductCard extends Component {
     handleClick=()=>{
-        this.props.routerProps.history.push(`/products/${this.props.product.id}`)
+        this.props.routerprops.history.push(`/products/${this.props.product.id}`)
     }
     render() {
+      
         return (
             <>
             
-            <div  class="grid-item-products">
+            <div  className="grid-item-products">
                  <div className="wrapper">      
                  <div className="image-wrapper">
                 <img onClick={this.handleClick}  className="product-pic" src={this.props.product.image} alt="img" />

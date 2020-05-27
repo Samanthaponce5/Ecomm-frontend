@@ -5,7 +5,6 @@ class ProductCard extends Component {
         this.props.routerprops.history.push(`/products/${this.props.product.id}`)
     }
     render() {
-        console.log(this.props)
         return (
             <>
 

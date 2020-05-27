@@ -1,8 +1,11 @@
 
 import React, { Component } from 'react';
 import CartCard from './CartCard'
+import { Link } from 'react-router-dom';
+
 class Cart extends Component {
     render() {
+
         console.log(this.props)
         const {cart} = this.props
         let productQTY = {}
@@ -34,6 +37,7 @@ class Cart extends Component {
                <p className='checkoutotal'>Total: ${this.props.total}</p>
                 <button className='checkoutbtn' onClick={()=> this.props.toggleCheckout(this.props.cart)}> Checkout </button>            
                 </div>
+
         )
     }
 }

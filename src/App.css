@@ -981,6 +981,7 @@ img {
 	left: 20em;
 }
 
+
 .checkoutbtn{
 	border:solid white;
 	font-family: 'Gruppo';font-size: 26px;
@@ -1097,4 +1098,14 @@ span {
 .checkoutotal{}
 
 .checkoutbtn{}
+
+=======
+/*=============== confirmation page ================== */
+
+.confirmation{
+    position: relative;
+    border: solid white;
+    width: 1000px;
+    top: 50px;
+} 
 

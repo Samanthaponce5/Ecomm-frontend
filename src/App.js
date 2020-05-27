@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-// import axios from 'axios'
 import NewProductForm from './component/NewProductForm';
 import './App.css';
 import Login from './component/Login';
@@ -11,6 +10,7 @@ import Home from './component/Home';
 import CreateAccount from './component/CreateAccount';
 import Cart from './component/Cart';
 import ViewProduct from './component/ViewProduct';
+import Confirmation from './component/Confirmation'
 
 // import Products from './component/Products';
 
@@ -75,8 +75,8 @@ class App extends React.Component {
 
   // CREATES ORDER FOR EACH ITEM, THAT'S HOW BACKEND IS SETUP
   toggleCheckout = (cartArray) => {
-    (cartArray.map((product) => {
-      fetch(ordersURL, {
+    (cartArray.map(async (product) => {
+      await fetch(ordersURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,13 +88,15 @@ class App extends React.Component {
           "user_id": this.state.user.id
         })
       })
-      .then(resp => resp.json())
-      .then(orders => {
-        this.setState({
-          orders:[...this.state.orders,orders]
+        .then(resp => resp.json())
+        .then(orders => {
+          this.setState({
+            orders: [...this.state.orders, orders]
+          })
         })
-      })
-
+      // this.setState({
+      //   cart: []
+      // })
     }))
   }
 
@@ -144,13 +146,8 @@ class App extends React.Component {
   }
 
   render() {
-    // let searchFilter = this.state.products.filter(product => {
-    //   return product.category.toLowerCase().includes(this.state.search)
-    // })
-
-    console.log(this.state.orders)
+    console.log(this.state)
     let searchFilter
-
     if (this.state.filtered) {
       searchFilter = this.state.filtered.filter(product => {
         return product.category.toLowerCase().includes(this.state.search)
@@ -209,8 +206,10 @@ class App extends React.Component {
               />
             )}
           />
+
           <Route exact path='/cart' render={(props) => <Cart addToCart={this.addToCart} orders={this.state.orders} routerProps={props} cart={this.state.cart} total={this.state.total} toggleCheckout={this.toggleCheckout} />} />
           {/* {this.state.user === null ? ( */}
+
           <Route
             path="/login"
             render={() => {
@@ -242,6 +241,17 @@ class App extends React.Component {
                 </div>
               );
             }}
+          />
+          <Route
+            exact path="/confirmation"
+            render={(props) =>
+              <Confirmation 
+              routerpops={props}
+              cart = {this.state.cart}
+              user = {this.state.user}
+              orders = {this.state.orders}
+              total = {this.state.total}
+              />}
           />
             )}
         </Switch>

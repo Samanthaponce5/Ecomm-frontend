@@ -185,7 +185,7 @@ class App extends React.Component {
 								user={this.state.user}
 								currentProduct={this.state.CurrentProduct}
 								currentImage={this.state.CurrentImage}
-								routerProps={props}
+								routerprops={props}
 								products={this.state.products}
 								addToCart={this.addToCart}
 							/>
@@ -228,7 +228,9 @@ class App extends React.Component {
                         addToCart={this.addToCart}
                         filterNature={this.filterNature}
                         filterCity={this.filterCity}
-                        filterAerial={this.filterAerial} />
+                        filterAerial={this.filterAerial}
+                        routerprops={props}
+                        />
                     </div>
                   );
                 }}

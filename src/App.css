@@ -858,7 +858,7 @@ img {
     height: 500px;
 	object-fit: cover;  
 	left: 20em;
-	top: -100px;
+	top: -240px;
 	transition: 0.3s;
   }
   
@@ -876,35 +876,73 @@ img {
 .imgtitle{
 	position: relative;
 	/* border:solid white; */
-	top: 60px;
+	top: 40px;
 	width: 130px;
-	left: 1070px;
-	font-family: 'Gruppo';font-size: 32px;
+	left: 1060px;
+	font-family: 'Gruppo';font-size: 42px;
+	/* border: solid white; */
+
 	
 	
 	}
 	.productuser{
 		position: relative;
-		top:170px;
-		left: 1010px;
+		top:190px;
+		left: 990px;
 		width: 300px;
-		font-family: 'Gruppo';font-size: 22px;
-		/* border:solid white; */
+		font-family: 'Gruppo';font-size: 32px;
+		width: 430px;
+		/* border: solid white; */
+
 	}
 	.imgcategories{
 		position: relative;
 		top: 165px;
 		left: 950px;
-		font-family: 'Gruppo';font-size: 22px;
+		font-family: 'Gruppo';font-size: 32px;
+		width: 130px;
+		/* border: solid white; */
+
 	}
 
 	.imgprice{
 		position: relative;
-		top: 250px;
+		top: 150px;
 		left: 1099px;
-		font-family: 'Gruppo';font-size: 22px;
+		font-family: 'Gruppo';font-size: 32px;
+		width: 130px;
+		/* border: solid white; */
+
 	}
 
+	.imgquantity{
+		position: relative;
+		top: 205px;
+		left: 1035px;
+		width: 200px;
+		height:62px;
+		/* border: solid white; */
+
+	}
+	.textquantity{
+		position: relative;
+		top: 200px;
+		left: 1080px;
+		width: 200px;
+		height:62px;
+		font-family: 'Gruppo';font-size: 32px;
+	}
+	.addtocartimg{
+		position: absolute;
+		top: 600px;
+		left: 1099px;
+		height: 65px;
+		width: 100px;
+		background-color: transparent;
+		font-family: 'Gruppo';font-size: 16px;
+		color: white;
+		/* border: solid white; */
+	}
 	
 	
 
@@ -947,15 +985,15 @@ img {
 	user-select: none;
 }
 .qty-box {
-	border: 1px solid #94c4ec;
-	border-radius: 3px;
+	border: 1px solid #ffffff;
+	/* border-radius: 3px; */
 	display: block;
 	height: 60px;
-	margin: calc(50vh - 30px) auto 0 auto;
+	/* margin: calc(50vh - 30px) auto 0 auto; */
 	width: 200px;
 }
 span {
-	color: #62a8e2;
+	color: #ffffff;
 	font-family: sans-serif;
 	float: left;
 	line-height: 60px;

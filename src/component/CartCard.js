@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class CartCard extends Component {
     render() {
         console.log(this.props.product)
+
+        
         return (
           
             <ul className='imgcartholder'>
@@ -17,3 +19,5 @@ class CartCard extends Component {
 }
 
 export default CartCard;
+
+

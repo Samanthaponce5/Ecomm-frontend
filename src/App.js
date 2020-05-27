@@ -21,7 +21,7 @@ class App extends React.Component {
     super()
 
     this.state = {
-      user: null,
+      user: '',
       CurrentProduct: null,
       CurrentImage: [],
       products: [],
@@ -54,7 +54,7 @@ class App extends React.Component {
 
   logout = (e) => {
     e.preventDefault()
-    this.setUser(null)
+    this.setUser('')
     // this.history.push('/login');
   };
 
@@ -64,6 +64,8 @@ class App extends React.Component {
       total: this.state.total + parseFloat(product.price)
     });
   }
+
+
 
 
 
@@ -94,7 +96,11 @@ class App extends React.Component {
         })
     ))
   }
-  //====================
+
+
+
+
+ 
   // FILTERING METHODS BELOW
 
   filterNature = () => {
@@ -201,7 +207,7 @@ class App extends React.Component {
               />
             )}
           />
-          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} total={this.state.total} />} />
+          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} orders={this.state.orders} total={this.state.total} />} />
           {/* {this.state.user === null ? ( */}
             <Route
               path="/login"

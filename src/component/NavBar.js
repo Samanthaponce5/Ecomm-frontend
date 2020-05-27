@@ -36,7 +36,7 @@ export default class NavBar extends Component {
 						) : (
 							<>
 								<li className='loglink' onClick={this.props.logout}>
-									<Link to="#">Log out</Link>
+									<Link to="/home">Log out</Link>
 								</li>
 								<li className="welcome">
 									<Link to="#">

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+// import axios from 'axios'
 import NewProductForm from './component/NewProductForm';
 import './App.css';
 import Login from './component/Login';
@@ -15,7 +16,6 @@ import ViewProduct from './component/ViewProduct';
 
 let productsURL = 'http://localhost:4000/products'
 let ordersURL = 'http://localhost:4000/orders'
-let allProducts
 class App extends React.Component {
   constructor() {
     super()
@@ -36,7 +36,6 @@ class App extends React.Component {
     fetch(productsURL)
       .then(resp => resp.json())
       .then(products => {
-        allProducts = products
         this.setState({ products });
       })
   }
@@ -65,17 +64,16 @@ class App extends React.Component {
     });
   }
 
-
-
   updateCurrentProduct = (data) => {
     this.setState({
       CurrentProduct: data.product,
       CurrentImage: data.image_url
     })
   }
+
   // CREATES ORDER FOR EACH ITEM, THAT'S HOW BACKEND IS SETUP
   toggleCheckout = (cartArray) => {
-    cartArray.map((product) => (
+    (cartArray.map((product) => {
       fetch(ordersURL, {
         method: 'POST',
         headers: {
@@ -83,16 +81,19 @@ class App extends React.Component {
           Accept: 'application/json'
         },
         body: JSON.stringify({
-          "confirmation_number": Math.floor(Math.random() * 1000),
+          "confirmation_number": Math.floor(Math.random() * 10000),
           "product_id": product.id,
           "user_id": this.state.user.id
         })
       })
-        .then(resp => resp.json())
-        .then(order => {
-          this.setState({ orders: [...this.state.orders, order] });
+      .then(resp => resp.json())
+      .then(orders => {
+        this.setState({
+          orders:[...this.state.orders,orders]
         })
-    ))
+      })
+
+    }))
   }
   //====================
   // FILTERING METHODS BELOW
@@ -141,7 +142,7 @@ class App extends React.Component {
     //   return product.category.toLowerCase().includes(this.state.search)
     // })
 
-    console.log(this.state.total)
+    console.log(this.state.orders)
     let searchFilter
 
     if (this.state.filtered) {
@@ -201,7 +202,7 @@ class App extends React.Component {
               />
             )}
           />
-          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} total={this.state.total} />} />
+          <Route exact path='/cart' render={(props) => <Cart routerProps={props} cart={this.state.cart} total={this.state.total} toggleCheckout={this.toggleCheckout} />} />
           {/* {this.state.user === null ? ( */}
           <Route
             path="/login"
@@ -253,3 +254,14 @@ export default withRouter(App);
 // }/>
 // </Switch>
 // </Fragment>
+
+// buscarCartoes = async () => {
+//   let cardsList = await CodeConnectRequests.fetchCardsList()
+
+//   // wait for nested requests to fulfill
+//   await Promise.all(cardsList.map(async (card) => { // Notice callback is async
+//       card.cardInfo = await CodeConnectRequests.fetchCardsInfo(card.cartao.tkCartao)
+//       return card
+//   }))
+
+// }

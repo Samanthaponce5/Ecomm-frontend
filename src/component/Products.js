@@ -5,7 +5,6 @@ export default class Products extends Component {
 
 
     render() {
-        console.log(this.props)
         return (
 
 

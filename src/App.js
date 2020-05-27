@@ -21,7 +21,7 @@ class App extends React.Component {
     super()
 
     this.state = {
-      user: null,
+      user: '',
       CurrentProduct: null,
       CurrentImage: [],
       products: [],
@@ -53,7 +53,7 @@ class App extends React.Component {
 
   logout = (e) => {
     e.preventDefault()
-    this.setUser(null)
+    this.setUser('')
     // this.history.push('/login');
   };
 
@@ -63,6 +63,8 @@ class App extends React.Component {
       total: this.state.total + parseFloat(product.price)
     });
   }
+
+
 
   updateCurrentProduct = (data) => {
     this.setState({
@@ -97,7 +99,11 @@ class App extends React.Component {
       // })
     }))
   }
-  //====================
+
+
+
+
+ 
   // FILTERING METHODS BELOW
 
   filterNature = () => {
@@ -163,6 +169,7 @@ class App extends React.Component {
         />
 
         <Switch>
+          
           <Route
             exact
             path="/create_account"
@@ -176,18 +183,18 @@ class App extends React.Component {
             )}
           />
           <Route
-            exact
-            path="/products/:id"
-            render={(props) => (
-              <ViewProduct
-                user={this.state.user}
-                currentProduct={this.state.CurrentProduct}
-                currentImage={this.state.CurrentImage}
-                routerProps={props}
-                products={this.state.products}
-                addToCart={this.addToCart}
-              />
-            )} />
+						exact
+						path="/products/:id"
+						render={(props) => (
+							<ViewProduct
+								user={this.state.user}
+								currentProduct={this.state.CurrentProduct}
+								currentImage={this.state.CurrentImage}
+								routerprops={props}
+								products={this.state.products}
+								addToCart={this.addToCart}
+							/>
+            )}/>
 
           <Route
             exact
@@ -199,16 +206,10 @@ class App extends React.Component {
               />
             )}
           />
-          <Route
-            exact path='/cart'
-            render={(props) =>
-              <Cart
-                routerProps={props}
-                cart={this.state.cart}
-                total={this.state.total}
-                toggleCheckout={this.toggleCheckout}
-              />}
-          />
+
+          <Route exact path='/cart' render={(props) => <Cart addToCart={this.addToCart} orders={this.state.orders} routerProps={props} cart={this.state.cart} total={this.state.total} toggleCheckout={this.toggleCheckout} />} />
+          {/* {this.state.user === null ? ( */}
+
           <Route
             path="/login"
             render={() => {

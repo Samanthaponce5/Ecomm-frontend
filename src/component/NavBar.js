@@ -28,7 +28,7 @@ export default class NavBar extends Component {
 						</li>
 						<div className="nav-underline"></div>
 						<div className="nav-underline2"></div>
-						{this.props.user === null ? (
+						{this.props.user === '' ? (
 							<li className='loglink'>
 								<Link to="/login">Login</Link>
 								

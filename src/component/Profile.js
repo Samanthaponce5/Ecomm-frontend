@@ -8,7 +8,7 @@ export default class Profile extends Component{
             <div>
 }
                 <h3>This is the profile for</h3>
-        <h1>{this.props.currentUser.first_name}</h1>
+        <h1>{this.props.user.first_name}</h1>
        
        
             </div>

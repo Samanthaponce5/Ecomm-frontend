@@ -21,7 +21,8 @@ body {
 /* ==========NAVBAR ================*/
 
 @import url('https://fonts.googleapis.com/css?family=Belleza');/* for navbar fonts */
-@import url('https://fonts.googleapis.com/css?family=Dokdo');/* for navbar fonts */
+@import url('https://fonts.googleapis.com/css?family=Dokdo');
+@import url('https://fonts.googleapis.com/css?family=Gruppo');
 
 
 .top {
@@ -856,7 +857,8 @@ img {
 	width:  500px;
     height: 500px;
 	object-fit: cover;  
-	left: 30em;
+	left: 20em;
+	top: -240px;
 	transition: 0.3s;
   }
   
@@ -864,36 +866,240 @@ img {
 	transform: scale(1.1);
   }
   
-  /* Other styling elements, that are not necessary for the example */
   
   .img-wrapper {
 	display: inline-block;
 	box-sizing: border-box;
 
   }
+/* ==========View Page Design Text============== */
+.imgtitle{
+	position: relative;
+	/* border:solid white; */
+	top: 40px;
+	width: 130px;
+	left: 1060px;
+	font-family: 'Gruppo';font-size: 42px;
+	/* border: solid white; */
+
+	
+	
+	}
+	.productuser{
+		position: relative;
+		top:190px;
+		left: 990px;
+		width: 300px;
+		font-family: 'Gruppo';font-size: 32px;
+		width: 430px;
+		/* border: solid white; */
+
+	}
+	.imgcategories{
+		position: relative;
+		top: 165px;
+		left: 950px;
+		font-family: 'Gruppo';font-size: 32px;
+		width: 130px;
+		/* border: solid white; */
+
+	}
+
+	.imgprice{
+		position: relative;
+		top: 150px;
+		left: 1099px;
+		font-family: 'Gruppo';font-size: 32px;
+		width: 130px;
+		/* border: solid white; */
+
+	}
+
+	.imgquantity{
+		position: relative;
+		top: 205px;
+		left: 1035px;
+		width: 200px;
+		height:62px;
+		/* border: solid white; */
+
+	}
+	.textquantity{
+		position: relative;
+		top: 200px;
+		left: 1080px;
+		width: 200px;
+		height:62px;
+		font-family: 'Gruppo';font-size: 32px;
+	}
+	.addtocartimg{
+		position: absolute;
+		top: 600px;
+		left: 1099px;
+		height: 65px;
+		width: 100px;
+		background-color: transparent;
+		font-family: 'Gruppo';font-size: 16px;
+		color: white;
+		/* border: solid white; */
+	}
+	
+	
+
+
+
+
 /*=============== img cart================== */
 
 .imgcart{
 	
 	position: relative;
-	width:  100px;
-    height: 100px;
+	width:  250px;
+    height: 250px;
 	object-fit: cover;  
-	left: 3em;
+	left: -2em;
+	top: -120px;
 	/* border:solid white; */
 	
 }
 
 .imgcartholder{
-	border:solid white;
+	/* border:solid white; */
 	position: relative;
-	width:  700px;
+	width:  400px;
     height: 300px;
 	left: 30em;
 	margin-top: 70px;
 
 }
+/* ==========================CHECKOUT PAGE================================ */
+.checkoutotal{
+	/* border:solid white; */
+	position: relative;
+	width: 150px;
+	font-family: 'Gruppo';font-size: 26px;
+	left: 20em;
+}
 
+
+.checkoutbtn{
+	border:solid white;
+	font-family: 'Gruppo';font-size: 26px;
+	position: relative;
+	left: 11em;
+}
+
+.checkouttitle{
+	/* border:solid white; */
+	position: relative;
+	width: 150px;
+	font-family: 'Gruppo';font-size: 26px;
+	left: 9em;
+}
+
+.checkoutprice{
+	/* border:solid rgb(87, 10, 10); */
+	width: 150px;
+	font-family: 'Gruppo';font-size: 26px;
+	position: relative;
+	left: 9em;
+	
+}
+
+.checkoutquantity{
+	/* border:solid white; */
+	width: 150px;
+	font-family: 'Gruppo';font-size: 26px;
+	position: relative;
+	left: 9em;
+	top: -252px;
+
+
+}
+
+
+
+
+
+
+
+/* ===============Quantity=========================== */
+
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.qty-box {
+	border: 1px solid #ffffff;
+	/* border-radius: 3px; */
+	display: block;
+	height: 60px;
+	
+	/* margin: calc(50vh - 30px) auto 0 auto; */
+	width: 200px;
+}
+span {
+	color: #ffffff;
+	font-family: sans-serif;
+	float: left;
+	line-height: 60px;
+	text-align: center;
+	width: calc(200px/3);
+	-webkit-font-smoothing: antialiased;
+}
+.dec, .inc {
+	height: 100%;
+}
+.dec:hover, .inc:hover {
+	cursor: pointer;
+}
+/* =================	QUANTITY TWO======================================= */
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.qty-box2 {
+	border: 1px solid #ffffff;
+	/* border-radius: 3px; */
+	display: block;
+	height: 40px;
+	/* margin: calc(50vh - 30px) auto 0 auto; */
+	position: relative;
+	left: 15em;
+	top: -252px;
+	width: 200px;
+}
+span {
+	
+	color: #ffffff;
+	font-family: sans-serif;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+	width: calc(200px/3);
+	-webkit-font-smoothing: antialiased;
+}
+.dec2, .inc2 {
+	/* border: solid white; */
+	height: 70%;
+}
+.dec2:hover, .inc2:hover {
+	cursor: pointer;
+}
+/* ==========================CHECKOUT PAGE================================ */
+.checkoutotal{}
+
+.checkoutbtn{}
+
+=======
 /*=============== confirmation page ================== */
 
 .confirmation{
@@ -902,3 +1108,4 @@ img {
     width: 1000px;
     top: 50px;
 } 
+

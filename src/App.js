@@ -73,8 +73,8 @@ class App extends React.Component {
 
   // CREATES ORDER FOR EACH ITEM, THAT'S HOW BACKEND IS SETUP
   toggleCheckout = (cartArray) => {
-    (cartArray.map((product) => {
-      fetch(ordersURL, {
+    (cartArray.map(async (product) => {
+      await fetch(ordersURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -91,6 +91,10 @@ class App extends React.Component {
         this.setState({
           orders:[...this.state.orders,orders]
         })
+      })
+
+      this.setState({
+        cart:[]
       })
 
     }))

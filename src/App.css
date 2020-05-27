@@ -894,10 +894,11 @@ img {
 
 }
 
+/*=============== confirmation page ================== */
 
-
-
-
-
-
-  
+.confirmation{
+    position: relative;
+    border: solid white;
+    width: 1000px;
+    top: 50px;
+} 

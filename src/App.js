@@ -64,6 +64,8 @@ class App extends React.Component {
     });
   }
 
+
+
   updateCurrentProduct = (data) => {
     this.setState({
       CurrentProduct: data.product,
@@ -170,6 +172,7 @@ class App extends React.Component {
         />
 
         <Switch>
+          
           <Route
             exact
             path="/create_account"
@@ -206,7 +209,7 @@ class App extends React.Component {
               />
             )}
           />
-          <Route exact path='/cart' render={(props) => <Cart  orders={this.state.orders} routerProps={props} cart={this.state.cart} total={this.state.total} toggleCheckout={this.toggleCheckout} />} />
+          <Route exact path='/cart' render={(props) => <Cart addToCart={this.addToCart} orders={this.state.orders} routerProps={props} cart={this.state.cart} total={this.state.total} toggleCheckout={this.toggleCheckout} />} />
           {/* {this.state.user === null ? ( */}
           <Route
             path="/login"

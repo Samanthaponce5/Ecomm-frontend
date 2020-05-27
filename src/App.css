@@ -954,23 +954,71 @@ img {
 .imgcart{
 	
 	position: relative;
-	width:  100px;
-    height: 100px;
+	width:  250px;
+    height: 250px;
 	object-fit: cover;  
-	left: 3em;
+	left: -2em;
+	top: -120px;
 	/* border:solid white; */
 	
 }
 
 .imgcartholder{
-	border:solid white;
+	/* border:solid white; */
 	position: relative;
-	width:  700px;
+	width:  400px;
     height: 300px;
 	left: 30em;
 	margin-top: 70px;
 
 }
+/* ==========================CHECKOUT PAGE================================ */
+.checkoutotal{
+	/* border:solid white; */
+	position: relative;
+	width: 150px;
+	font-family: 'Gruppo';font-size: 26px;
+	left: 20em;
+}
+
+.checkoutbtn{
+	border:solid white;
+	font-family: 'Gruppo';font-size: 26px;
+	position: relative;
+	left: 11em;
+}
+
+.checkouttitle{
+	/* border:solid white; */
+	position: relative;
+	width: 150px;
+	font-family: 'Gruppo';font-size: 26px;
+	left: 9em;
+}
+
+.checkoutprice{
+	/* border:solid rgb(87, 10, 10); */
+	width: 150px;
+	font-family: 'Gruppo';font-size: 26px;
+	position: relative;
+	left: 9em;
+	
+}
+
+.checkoutquantity{
+	/* border:solid white; */
+	width: 150px;
+	font-family: 'Gruppo';font-size: 26px;
+	position: relative;
+	left: 9em;
+	top: -252px;
+
+
+}
+
+
+
+
 
 
 
@@ -989,6 +1037,7 @@ img {
 	/* border-radius: 3px; */
 	display: block;
 	height: 60px;
+	
 	/* margin: calc(50vh - 30px) auto 0 auto; */
 	width: 200px;
 }
@@ -1007,3 +1056,45 @@ span {
 .dec:hover, .inc:hover {
 	cursor: pointer;
 }
+/* =================	QUANTITY TWO======================================= */
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.qty-box2 {
+	border: 1px solid #ffffff;
+	/* border-radius: 3px; */
+	display: block;
+	height: 40px;
+	/* margin: calc(50vh - 30px) auto 0 auto; */
+	position: relative;
+	left: 15em;
+	top: -252px;
+	width: 200px;
+}
+span {
+	
+	color: #ffffff;
+	font-family: sans-serif;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+	width: calc(200px/3);
+	-webkit-font-smoothing: antialiased;
+}
+.dec2, .inc2 {
+	/* border: solid white; */
+	height: 70%;
+}
+.dec2:hover, .inc2:hover {
+	cursor: pointer;
+}
+/* ==========================CHECKOUT PAGE================================ */
+.checkoutotal{}
+
+.checkoutbtn{}
+

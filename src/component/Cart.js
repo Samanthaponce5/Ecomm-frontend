@@ -14,19 +14,22 @@ class Cart extends Component {
     }
     render() {
 
+
         // console.log(this.props)
         const {cart} = this.props
+
         let productQTY = {}
 
         const recordQTY = product => {
-          Object.keys(productQTY).includes(product.title) ? productQTY[product.title] += 1 : productQTY[product.title] = 1
+            Object.keys(productQTY).includes(product.title) ? productQTY[product.title] += 1 : productQTY[product.title] = 1
         }
-    
+
         const removeDuplicates = (myArr, prop) => {
-          return myArr.filter((obj, pos, arr) => {
-              return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos
-          })
+            return myArr.filter((obj, pos, arr) => {
+                return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos
+            })
         }
+
      
     
         let removedProductsDuplicates = removeDuplicates(cart, 'title')
@@ -35,16 +38,20 @@ class Cart extends Component {
     //   console.log("showww",removedProductsDuplicates)
 // console.log(cart)
 console.log('cart', this.state.total)
+
         return (
             <div>
             <div className='cart'>
-                {removedProductsDuplicates.map((cart,index) => (
-                    <CartCard key={index} totalPrice={this.totalPrice} product={cart} total={this.state.total} quantity={productQTY[cart.title] } addToCart={this.addToCart}/>
+
+                {removedProductsDuplicates.map((cart, index) => (
+                    <CartCard key={index} product={cart} quantity={productQTY[cart.title]} addToCart={this.addToCart} />
                 ))}
-                </div>
-               <p className='checkoutotal'>Total: ${this.state.total}</p>
-                <button className='checkoutbtn' onClick={()=> this.props.toggleCheckout(this.props.cart)}> Checkout </button>            
-                </div>
+                <p className='checkoutotal'>Total: ${this.props.total}</p>
+                <button className='checkoutbtn' onClick={() => this.props.toggleCheckout(this.props.cart)}>
+                    <Link to='/confirmation'>Checkout</Link>
+                </button>
+            </div>
+
 
         )
     }

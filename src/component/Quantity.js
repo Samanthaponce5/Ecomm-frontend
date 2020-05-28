@@ -20,9 +20,9 @@ export default class Quantity extends React.Component{
       return (
           
         <div className="qty-box">
-          <span className="dec" onClick={this.onDecrement} onTouchStart={this.onDecrement}>–</span>
-          <span className="qty">{this.state.value}</span>
-          <span className="inc" onClick={this.onIncrement} onTouchStart={this.onIncrement}>+</span>
+          <span className="span dec" onClick={this.onDecrement} onTouchStart={this.onDecrement}>–</span>
+          <span className="span qty">{this.state.value}</span>
+          <span className="span inc" onClick={this.onIncrement} onTouchStart={this.onIncrement}>+</span>
         </div>
       );
     

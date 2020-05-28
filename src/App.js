@@ -11,6 +11,7 @@ import CreateAccount from './component/CreateAccount';
 import Cart from './component/Cart';
 import ViewProduct from './component/ViewProduct';
 import Confirmation from './component/Confirmation'
+import Entrance from './component/Entrance'
 
 // import Products from './component/Products';
 
@@ -182,6 +183,7 @@ class App extends React.Component {
 
             )}
           />
+          {/* <Route exact path="/" render={(props) =>(<Entrance {...props}/> )}/> */}
           <Route
 						exact
 						path="/products/:id"

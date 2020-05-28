@@ -18,7 +18,7 @@ class ProductCard extends Component {
                     </div>
 
 
-                    {/* <p>${this.props.product.price} </p> */}
+                    <p className='prprice'>${this.props.product.price} </p>
 
                     <button className="cart-btn" onClick={() => this.props.user? this.props.addToCart(this.props.product): alert('Please Login')}> Add to Cart </button>
 

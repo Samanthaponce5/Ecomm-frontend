@@ -49,6 +49,10 @@ class CreateAccount extends Component {
 
 	render() {
 		return (
+			<>
+			 <div class='signuplogo'>
+                SIGN UP
+                </div>
 			<form className="signup" onSubmit={this.handleSubmit}>
 				<input
 					autoComplete="off"
@@ -96,15 +100,16 @@ class CreateAccount extends Component {
 
 				<input className="signupbtn" type="submit" value="Create My Account" />
 				<div className="signlogin">
-					<span>
-						<b>Have an account?</b>
+					<span className='q'>
+						<b >Have an account?</b>
 					</span>
 					<br />
 					<span>
-						<Link to="/login">Log In</Link>
+						<Link className='signuplinks' to="/login">LogIn</Link>
 					</span>
 				</div>
 			</form>
+			</>
 		)
 	}
 }

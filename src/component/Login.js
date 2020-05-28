@@ -42,6 +42,10 @@ class Login extends React.Component {
 	}
 	render() {
 		return (
+			<>
+			 <div class='login'>
+              LOGIN
+              </div>
 			<form className="loginForm" onSubmit={this.handleSubmit}>
 				<input
 					autoComplete="off"
@@ -66,17 +70,19 @@ class Login extends React.Component {
 				/>
 				<br />
 
-				<input className="loginbutton" type="submit" value="Login" />
+				<input className="loginbutton btn-border-4" type="submit" value="Login" />
 				<ul className="signuplog">
-					<span>
+					<p>
 						<b>Don't have an account?</b>
-					</span>
+					</p>
 					<br />
-					<span>
-						<Link to="/create_account">Sign up</Link>
-					</span>
+					<p >
+						<Link className='signuplink' to="/create_account">Sign up</Link>
+					</p>
 				</ul>
 			</form>
+
+			</>
 		);
 	}
 }

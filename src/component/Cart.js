@@ -44,8 +44,9 @@ console.log('cart', this.state.total)
             <div className='cart'>
 
                 {removedProductsDuplicates.map((cart, index) => (
-                    <CartCard key={index} product={cart} quantity={productQTY[cart.title]} addToCart={this.addToCart} />
+                    <CartCard key={index} product={cart} quantity={productQTY[cart.title]} addToCart={this.addToCart} total={this.state.total} totalPrice={this. totalPrice}/>
                 ))}
+                </div>
                 <p className='checkoutotal'>Total: ${this.props.total}</p>
                 <button className='checkoutbtn' onClick={() => this.props.toggleCheckout(this.props.cart)}>
                     <Link to='/confirmation'>Checkout</Link>

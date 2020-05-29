@@ -28,7 +28,7 @@ class ProductProfile extends Component {
 	render() {
 		const { id } = this.state.products;
 		const { history, user, addToCart, routerprops } = this.props;
-		//    console.log('username:',this.props.user.username)
+		console.log(this.state.products)
 		return (
 			<div className="grid-item">
 				{/* <h1>{this.state.products}</h1> */}
@@ -43,7 +43,7 @@ class ProductProfile extends Component {
 				<label className="textquantity">Quantity:</label>
 				<p className="imgquantity">
 					{' '}
-					<Quantity />
+					<Quantity quantity={this.props.quantity} product={this.state.products} onDecrement={this.props.onDecrement} onIncrement={this.props.onIncrement}/>
 				</p>
 				<button className="addtocartimg" onClick={this.props.user.username ?() => {
 									addToCart(this.state.products)

@@ -42,6 +42,15 @@ class App extends React.Component {
       })
   }
 
+  cartCheck = () =>{
+    if(this.state.cart.length===0){
+      this.setState({ 
+        CurrentProduct:null
+        
+      });
+    }
+  }
+
   updateCurrentUser = (data) => {
     this.setState({
       CurrentUser: data.user,
@@ -60,10 +69,12 @@ class App extends React.Component {
   };
 
   addToCart = (product) => {
-    this.setState({
-      cart: [...this.state.cart, product],
-      total: this.state.total + parseFloat(product.price)
-    });
+   if(this.state.CurrentProduct === null){ // if not in show page
+      this.setState({
+        cart: [...this.state.cart, product],
+        total: this.state.total + parseFloat(product.price)
+      })
+    }
   }
 
 
@@ -177,6 +188,7 @@ class App extends React.Component {
         cart: [...this.state.cart, product]
       })
     }
+    this.cartCheck()
   }
 
   onDecrement = (product,quantity) => { // DECREMENT 
@@ -207,10 +219,14 @@ class App extends React.Component {
       //   cart: updated 
       // }); // set state of with new array. 
     }
+    this.cartCheck()
   }
 
+
   render() {
-    console.log('post render',this.state.cart)
+    console.log('state',this.state)
+    console.log('cart', this.state.cart.length)
+    console.log('total',this.state.total)
     let searchFilter
     if (this.state.filtered) {
       searchFilter = this.state.filtered.filter(product => {
@@ -221,6 +237,7 @@ class App extends React.Component {
         return product.category.toLowerCase().includes(this.state.search)
       })
     }
+
 
     return (
       <BrowserRouter>
@@ -258,6 +275,9 @@ class App extends React.Component {
                 routerprops={props}
                 products={this.state.products}
                 addToCart={this.addToCart}
+                onDecrement={this.onDecrement}
+                onIncrement={this.onIncrement}
+                quantity={this.state.quantity}
               />
             )} />
 

@@ -3,8 +3,10 @@ import CartCard from './CartCard'
 import { Link } from 'react-router-dom';
 
 class Cart extends Component {
+    
+
     state={
-        total:this.props.total,
+//         total:this.props.total,
 
         address:'',
         zipcode:'',
@@ -43,16 +45,14 @@ class Cart extends Component {
 
     }
 
-   totalPrice=(newTotal)=>{
-       const{total}=this.state
-       console.log('does it?',total)
-        this.setState({total:newTotal})
-    }
+
     render() {
+
 
         let cartImg =require('../image/ezgif.com-gif-maker (4).gif')
         // console.log(this.props)
-        const {cart} = this.props
+        const {cart total, totalPrice } = this.props
+
 
         let productQTY = {}
 
@@ -66,11 +66,12 @@ class Cart extends Component {
             })
         }
 
-     
-    
+
+
         let removedProductsDuplicates = removeDuplicates(cart, 'title')
-    
+
         cart.forEach(recordQTY)
+
     //   console.log("showww",removedProductsDuplicates)
 // console.log(cart)
 console.log('cart', this.state.total)
@@ -81,7 +82,8 @@ console.log('cart length', this.props.cart)
             <div className='cart'>
 
                 {removedProductsDuplicates.map((cart, index) => (
-                    <CartCard key={index} product={cart} quantity={productQTY[cart.title]} addToCart={this.addToCart} total={this.state.total} totalPrice={this. totalPrice}/>
+                    <CartCard key={index} product={cart} quantity={productQTY[cart.title]} addToCart={this.addToCart} total={this.state.total} totalPrice={this. totalPrice} onDecrement={this.props.onDecrement}
+                        onIncrement={this.props.onIncrement}/>
                 ))}
                 </div>
                {this.props.cart.length > 0 ?
@@ -104,6 +106,7 @@ console.log('cart length', this.props.cart)
                     <button className='checkoutbtn' onSubmit={this.handleClick } >
                         Checkout
                     {/* <Link className='toconfirm' to='/confirmation'>Checkout</Link> */}
+
                 </button>
                </form>
                </> : 
@@ -142,15 +145,15 @@ export default Cart;
 //         const recordQTY = product => {
 //           Object.keys(productQTY).includes(product.title) ? productQTY[product.title] += 1 : productQTY[product.title] = 1
 //         }
-    
+
 //         const removeDuplicates = (myArr, prop) => {
 //           return myArr.filter((obj, pos, arr) => {
 //               return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos
 //           })
 //         }
-    
+
 //         let removedProductsDuplicates = removeDuplicates(cart, 'title')
-    
+
 //         cart.forEach(recordQTY)
 //     //   console.log("showww",removedProductsDuplicates)
 

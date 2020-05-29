@@ -30,7 +30,8 @@ class App extends React.Component {
       cart: [],
       total: 0,
       orders: [],
-      search: ""
+      search: "",
+      quantity: null
     }
   }
   componentDidMount() {
@@ -95,16 +96,13 @@ class App extends React.Component {
             orders: [...this.state.orders, orders]
           })
         })
-      // this.setState({
-      //   cart: []
-      // })
     }))
   }
 
 
 
 
- 
+
   // FILTERING METHODS BELOW
 
   filterNature = () => {
@@ -141,13 +139,78 @@ class App extends React.Component {
     })
   }
   //====================
+
   // SEARCH METHODS BELOW
   searchChange = (event) => {
     this.setState({ search: event.target.value })
   }
+  //====================
+
+  // New TOTAL after quantity changes
+  totalPrice = (quantity, product) => {
+    let i
+    for (i = 0; i < quantity; i++) {
+      this.setState({
+        cart: [...this.state.cart, product]
+      })
+    }
+  }
+
+  // Increment Decrement Logic
+
+  onIncrement = (product, quantity) => {     // INCREMENT
+    if (this.state.currentProduct === product) {
+      this.setState(prevState => ({
+        quantity: prevState.quantity + 1
+      }))
+      this.setState({
+        total: this.state.total + product.price,
+        cart: [...this.state.cart, product]
+      })
+    } else if (this.state.currentProduct !== product || this.state.currentProduct === null) {
+      this.setState({
+        CurrentProduct: product,
+        quantity: quantity + 1,
+      })
+      this.setState({
+        total: this.state.total + product.price,
+        cart: [...this.state.cart, product]
+      })
+    }
+  }
+
+  onDecrement = (product,quantity) => { // DECREMENT 
+    if (this.state.currentProduct === product) {
+      this.setState(prevState => ({
+        quantity: prevState.quantity - 1
+      }))
+      this.setState({
+        total: this.state.total - product.price
+      })
+      // Remove Item from cart 
+      let idx = this.state.cart.findIndex(p => p.id === product.id) // find index of elemnt that meets criteria
+      let updated = this.state.cart.splice(idx, 1) // create new array from old and remove element with index above
+      this.setState({ cart: updated }); // set state of with new array. 
+    } else if (this.state.currentProduct !== product || this.state.currentProduct === null) {
+      this.setState({
+        CurrentProduct: product,
+        quantity: quantity - 1,
+      })
+      this.setState({
+        total: this.state.total - product.price
+      })
+      let idx = this.state.cart.findIndex(p => p.id === product.id) // find index of elemnt that meets criteria
+      console.log('index',idx)
+      let updated = this.state.cart.splice(idx, 1) // returns the object that was deleted
+      console.log('new array',updated)
+      // this.setState({ 
+      //   cart: updated 
+      // }); // set state of with new array. 
+    }
+  }
 
   render() {
-    console.log(this.state)
+    console.log('post render',this.state.cart)
     let searchFilter
     if (this.state.filtered) {
       searchFilter = this.state.filtered.filter(product => {
@@ -170,7 +233,7 @@ class App extends React.Component {
         />
 
         <Switch>
-          
+
           <Route
             exact
             path="/create_account"
@@ -185,18 +248,18 @@ class App extends React.Component {
           />
           {/* <Route exact path="/" render={(props) =>(<Entrance {...props}/> )}/> */}
           <Route
-						exact
-						path="/products/:id"
-						render={(props) => (
-							<ViewProduct
-								user={this.state.user}
-								currentProduct={this.state.CurrentProduct}
-								currentImage={this.state.CurrentImage}
-								routerprops={props}
-								products={this.state.products}
-								addToCart={this.addToCart}
-							/>
-            )}/>
+            exact
+            path="/products/:id"
+            render={(props) => (
+              <ViewProduct
+                user={this.state.user}
+                currentProduct={this.state.CurrentProduct}
+                currentImage={this.state.CurrentImage}
+                routerprops={props}
+                products={this.state.products}
+                addToCart={this.addToCart}
+              />
+            )} />
 
           <Route
             exact
@@ -209,9 +272,20 @@ class App extends React.Component {
             )}
           />
 
-          <Route exact path='/cart' render={(props) => <Cart addToCart={this.addToCart} orders={this.state.orders} routerProps={props} cart={this.state.cart} total={this.state.total} toggleCheckout={this.toggleCheckout} />} />
-          {/* {this.state.user === null ? ( */}
-
+          <Route
+            exact path='/cart'
+            render={(props) =>
+              <Cart addToCart={this.addToCart}
+                orders={this.state.orders}
+                routerProps={props}
+                cart={this.state.cart}
+                total={this.state.total}
+                toggleCheckout={this.toggleCheckout}
+                totalPrice={this.totalPrice}
+                onDecrement={this.onDecrement}
+                onIncrement={this.onIncrement}
+              />}
+          />
           <Route
             path="/login"
             render={() => {
@@ -247,12 +321,12 @@ class App extends React.Component {
           <Route
             exact path="/confirmation"
             render={(props) =>
-              <Confirmation 
-              routerpops={props}
-              cart = {this.state.cart}
-              user = {this.state.user}
-              orders = {this.state.orders}
-              total = {this.state.total}
+              <Confirmation
+                routerpops={props}
+                cart={this.state.cart}
+                user={this.state.user}
+                orders={this.state.orders}
+                total={this.state.total}
               />}
           />
             )}

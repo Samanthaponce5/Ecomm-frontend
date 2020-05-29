@@ -565,7 +565,7 @@ input::-webkit-input-placeholder {
 
 .search__container {
 	padding-top: 0px;
-	margin-top: -15px;
+	margin-top: -20px;
 	position: absolute;
 left: -150%;
 }
@@ -1337,13 +1337,13 @@ img {
 	/* border-radius: 3px; */
 	display: block;
 	height: 60px;
-	border: solid red;
+	/* border: solid rgb(0, 17, 255); */
 	position: relative;
 	/* margin: calc(50vh - 30px) auto 0 auto; */
-	width: 270px;
+	width: 218px;
 }
 .span {
-	border: solid red;
+	/* border: solid rgb(0, 255, 170); */
 	color: #ffffff;
 	font-family: sans-serif;
 	float: left;
@@ -1416,43 +1416,52 @@ img {
 
 
 
-/* entranceeeee */
-
-
+/* enterrr */
 .enter{
     position: absolute;
     z-index: 1;
     margin-top:30px ;
     margin-left:-70em ;
     border:solid black
-	
+
 }
 *
 {
     /* position: relative; */
   /* margin: 0;
   padding: 0; */
-  -webkit-box-sizing: border-box;
+  /* -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 
 
 }
 
+.black{
+    position: absolute;
+    border: solid black;
+    margin-top:-44.5em ;
+    margin-left:-95em ;
+    width: 300%;
+    height: 200%;
 
+    z-index: -1;
+}
 
 .picture
 {
   display: block;
   width: 100%;
-  height: 130%
+  height: 130%;
+  margin-top: -10em;
+  
 }
 
 #slider
 {
     top: 50px;
     width: 100%;
-    height: 00%;
+    height: auto;
     z-index: 9999;
     overflow-x: hidden; 
 
@@ -1500,19 +1509,21 @@ img {
 {
     position: absolute;
     width: 300%;
-    height: 100%;
+    height: auto;
     top: 50px;
-    left: 0;
-    overflow: hidden;
+    margin-left:-10px;
+    overflow: visible;
     -webkit-animation: slider 16s infinite;
-    animation: slider 16s infinite
+    animation: slider 16s infinite;
+    border:solid black
+
 }
 
-#slider #slides:hover
+/* #slider #slides:hover
 {
     -webkit-animation-play-state: paused;
     animation-play-state: paused
-}
+} */
 
 #slider #slides .slide
 {
@@ -1520,7 +1531,6 @@ img {
     width: 33.33333333%;
     height: 100%;
     float: left;
-    overflow: hidden
 }
 
 #slider #slides .slide .caption
@@ -1532,7 +1542,7 @@ img {
   left: 0;
   background-color: rgba(12, 13, 14, 0.795);
   color: #fff;
-  padding: 20px 4%
+  padding: 40px 4%
 }
 
 #slider #slides .slide .caption p
@@ -1643,10 +1653,11 @@ img {
 .about {
  background:url('https://www.subtlepatterns.com/patterns/brickwall.png');
   background-size:10%;
+  margin-top: -40em;
 }
 
 .frame {
-  margin:490px auto;
+  margin:250px auto;
   margin-left: 5em;
   border:25px solid #222;
   height:475px;
@@ -1672,7 +1683,7 @@ img {
   position:absolute;
   height:350px;
   width:250px;
-  margin-left:30px;
+  margin-left:48px;
   margin-top:50px;
   -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .6);
   box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .1);
@@ -1686,5 +1697,103 @@ img {
   font-size:30px;
   margin-left:65px;
 }
+/* tableee */
+.plant{
+    position: absolute;
+    /* transform: scaleX(-1); */
+    margin-top: -30em;
+    margin-left:-3em;
 
+    float: center;
+  width:  600px;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+.pin{
+    position: absolute;
+    /* transform: scaleX(-1); */
+    margin-top: -1em;
+    margin-left:16.5em;
 
+    float: center;
+  width:  50px;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+
+}
+#two {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    position: absolute;
+    z-index: 1;
+    margin-left: 20em;
+  }
+  
+  .box {
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+  }
+  .box::before {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 10px;
+    position: absolute;
+  }
+  .box::after {
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 10px;
+    position: absolute;
+  }
+  
+  .start {
+    float: left;
+  }
+  
+  .ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+    -webkit-animation: scrollUp 4s ease-in-out infinite normal;
+            animation: scrollUp 4s ease-in-out infinite normal;
+  }
+  .ul > * {
+    opacity: 1;
+    height: 20px;
+    padding: 10px;
+    list-style: none;
+  }
+  
+  @-webkit-keyframes scrollUp {
+    from {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    to {
+      -webkit-transform: translateY(-80%);
+              transform: translateY(-80%);
+    }
+  }
+  
+  @keyframes scrollUp {
+    from {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    to {
+      -webkit-transform: translateY(-80%);
+              transform: translateY(-80%);
+    }
+  }

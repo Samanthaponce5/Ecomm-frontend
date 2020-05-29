@@ -29,7 +29,7 @@ componentWillMount(){
 
     render() {
         console.log('confirm pg',this.props.user)
-        const doggo = require('../image/ezgif.com-gif-maker.gif')
+     
        
         return (
             <div className='confirmation'>
@@ -48,7 +48,7 @@ componentWillMount(){
                 })} */}
                     Your Total is ${this.props.total}! 
                     Thank you for shopping with Picology!
-                    <img className='doggo' src={doggo} alt='doggo'/>
+             
             </div>
         );
     }

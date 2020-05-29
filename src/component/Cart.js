@@ -72,7 +72,7 @@ class Cart extends Component {
     //   console.log("showww",removedProductsDuplicates)
 // console.log(cart)
 console.log('cart', this.state.total)
-console.log('this user', this.props.user)
+console.log('cart length', this.props.cart)
 
         return (
             <div className='whole'>
@@ -82,6 +82,8 @@ console.log('this user', this.props.user)
                     <CartCard key={index} product={cart} quantity={productQTY[cart.title]} addToCart={this.addToCart} total={this.state.total} totalPrice={this. totalPrice}/>
                 ))}
                 </div>
+               {this.props.cart.length > 0 ?
+               <>
                 <p className='checkoutotal'>Total: ${this.props.total}</p>
               
                 <form className='billing' onSubmit={this.handleClick }>
@@ -98,7 +100,9 @@ console.log('this user', this.props.user)
                         Checkout
                     {/* <Link className='toconfirm' to='/confirmation'>Checkout</Link> */}
                 </button>
-               </form> 
+               </form>
+               </> : null
+                 } 
 
 
             </div>

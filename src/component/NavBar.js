@@ -15,11 +15,11 @@ export default class NavBar extends Component {
 						<li className="logo">Picology</li>
 
 						<li className="homeLink">
-							<Link to="/home">Home</Link>
+							<Link to="/">About</Link>
 						</li>
 
 						<li className="sellContentLink">
-							<Link to="/sellProduct">Sell Content</Link>
+							<Link to="/home">Home</Link>
 						</li>
 						<Search search={this.props.search} searchChange={this.props.searchChange}/>
 						<li className='cartlink'>

@@ -46,8 +46,10 @@ class Login extends React.Component {
 			 <div class='login'>
               LOGIN
               </div>
+			
 			<form className="loginForm" onSubmit={this.handleSubmit}>
 				<input
+					required
 					autoComplete="off"
 					className="loginputname"
 					type="text"
@@ -56,10 +58,12 @@ class Login extends React.Component {
 					value={this.state.username}
 					onChange={this.handleOnChange}
 				/>
+				     
 				<br />
 
 				<label></label>
 				<input
+				required
 					autoComplete="off"
 					className="loginputpassword"
 					type="password"
@@ -72,7 +76,7 @@ class Login extends React.Component {
 
 				<input className="loginbutton btn-border-4" type="submit" value="Login" />
 				<ul className="signuplog">
-					<p>
+					<p className='dont'>
 						<b>Don't have an account?</b>
 					</p>
 					<br />
@@ -81,7 +85,7 @@ class Login extends React.Component {
 					</p>
 				</ul>
 			</form>
-
+		
 			</>
 		);
 	}

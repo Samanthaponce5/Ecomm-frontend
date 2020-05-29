@@ -251,6 +251,7 @@ class App extends React.Component {
 
         <Switch>
 
+        <Route exact path="/" render={(props) =>(<Entrance {...props}/> )}/>
           <Route
             exact
             path="/create_account"
@@ -306,6 +307,7 @@ class App extends React.Component {
                 onIncrement={this.onIncrement}
               />}
           />
+
           <Route
             path="/login"
             render={() => {

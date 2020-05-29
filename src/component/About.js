@@ -77,7 +77,7 @@ export default class about extends Component{
        <div class="image-front">
       <img classname="pic" src="https://images.pexels.com/photos/4275889/pexels-photo-4275889.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height="350" width="250" alt="" />
     </div>
-    <div class="text">Marilyn Monroe</div>
+  
   </div>
 </div>
 </div>

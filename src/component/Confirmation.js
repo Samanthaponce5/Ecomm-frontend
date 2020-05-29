@@ -38,7 +38,7 @@ componentWillMount(){
             <>
             <div className='confirmation'>
             <h3>Thank you for your order, {this.props.user.first_name}!</h3>
-            <p>Items will arrive within 3-5 businees days!</p>
+            <p>Items will arrive within 3-5 business days!</p>
              <p> Address: {this.state.address} {this.state.city} {this.state.state} {this.state.zipcode} </p>
               
                 {/* {this.props.cart.map(product => {

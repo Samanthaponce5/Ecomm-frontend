@@ -49,6 +49,7 @@ class Login extends React.Component {
 			
 			<form className="loginForm" onSubmit={this.handleSubmit}>
 				<input
+					required
 					autoComplete="off"
 					className="loginputname"
 					type="text"
@@ -62,6 +63,7 @@ class Login extends React.Component {
 
 				<label></label>
 				<input
+				required
 					autoComplete="off"
 					className="loginputpassword"
 					type="password"

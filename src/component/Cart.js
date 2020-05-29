@@ -90,16 +90,16 @@ console.log('cart length', this.props.cart)
               
                 <form className='billing' onSubmit={this.handleClick }>
 
-                     <input className='billadress' type="text" placeholder='Address' name="address" value={this.state.address} onChange={this.handleChange}/><br/>
+                     <input required className='billadress' type="text" placeholder='Address' name="address" value={this.state.address} onChange={this.handleChange}/><br/>
                 
-                    <input className='billstate' type="text" placeholder='State' name="state" value={this.state.state} onChange={this.handleChange}/><br/>
+                    <input required className='billstate' type="text" placeholder='State' name="state" value={this.state.state} onChange={this.handleChange}/><br/>
 
-                    <input className='billcity' type="text" placeholder='City' name="city" value={this.state.city} onChange={this.handleChange}/><br/>
+                    <input required className='billcity' type="text" placeholder='City' name="city" value={this.state.city} onChange={this.handleChange}/><br/>
 
                
-                    <input className='billzip' type="text" placeholder='Zipcode'  name="zipcode" value={this.state.zipcode} onChange={this.handleChange}/><br/>
+                    <input required className='billzip' type="text" placeholder='Zipcode'  name="zipcode" value={this.state.zipcode} onChange={this.handleChange}/><br/>
                 
-                    <input className='billcard' type="text"  placeholder='Card Number' name="card" value={this.state.card} onChange={this.handleChange}/><br/>
+                    <input required className='billcard' type="text"  placeholder='Card Number' name="card" value={this.state.card} onChange={this.handleChange}/><br/>
                
                     <button className='checkoutbtn' onSubmit={this.handleClick } >
                         Checkout

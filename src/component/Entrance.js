@@ -28,17 +28,28 @@ export default class entrance extends Component{
     
 <>
 <div id ="two">
-    <p class="start">I speak</p>
+    <p class="start">Find</p>
+
 <div class="box">
+
   <ul className="ul">
-    <li class="item-1">English</li>
-    <li class="item-2">Maltese</li>
-    <li class="item-3">Danish</li>
-    <li class="item-4">Italian</li>
-    <li class="item-5">English</li>
+    <li class="item-1">Nature Photography</li>
+    <li class="item-2">Landscape Photography</li>
+    <li class="item-3">Aerial Photography</li>
+    <li class="item-4">Travel Photography</li>
+    <li class="item-5">And many more!</li>
   </ul>  
 </div>
+
 </div>
+
+<div class="scroll-downs">
+  <div class="mousey">
+    <div class="scroller"></div>
+  </div>
+</div>
+
+
 <img className="black" src="https://www.solidbackgrounds.com/images/1920x1200/1920x1200-black-solid-color-background.jpg" alt="black"/>
 
 <span id="slider">

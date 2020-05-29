@@ -231,6 +231,20 @@ nav a:hover {
 	margin-right: -50%;
 	transform: translate(-50%, -50%);
 }
+/* llllllllllllllllllllllllllll` ``````````````````````````````````````````````````````````````````````````````````*/
+
+
+/* .loginputname,
+.loginputname::-webkit-input-placeholder {
+	font-family: 'Gruppo';font-size: 32px;
+    line-height: 3;
+}*/
+
+input,
+input::-webkit-input-placeholder {
+	font-family: 'Gruppo';
+    line-height: 3;
+} 
 
 .loginputname {
 	outline: none !important;
@@ -240,46 +254,59 @@ nav a:hover {
 
 	background-color: transparent;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 
 	line-height: 18px;
 
-	color: #8d8787;
-	background-color: rgb(255, 255, 255);
+	color: #ffffff;
+	/* background-color: rgb(255, 255, 255); */
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+
+	background: transparent;
+    border: none;
+	border-bottom: 1px solid #ffffff;
+	position: relative;
+	bottom: 60px;
+	
+
 }
 
 .loginputpassword {
 	outline: none !important;
 	position: absolute;
-	bottom: 170px;
+	bottom: 200px;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
+
 	line-height: 1px;
 
-	color: #8d8787;
+	color: #ffffff;
 	background-color: rgb(255, 255, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 
 .loginbutton {
 	outline: none !important;
 	position: absolute;
-	bottom: 10px;
+	bottom: 40px;
 	height: 70px;
 
 	width: 300px;
@@ -298,14 +325,22 @@ nav a:hover {
 	/* border: 3px solid #73AD21; */
 	outline: none !important;
 	position: absolute;
-	bottom: 60px;
+	bottom: 70px;
+	width: 200px;
 }
 .signuplink{
 	outline: none !important;
-	color: white;
+	color: rgb(201, 201, 201);
 	position: absolute;
-	bottom: 30px;
+	bottom: 50px;
 
+}
+.dont{
+	position: absolute;
+	bottom: 55px;
+	width: 200px;
+	/* left: 20px; */
+	color: rgb(201, 201, 201);
 }
 /* =========================END OF LOG IN=============================== */
 
@@ -318,7 +353,7 @@ nav a:hover {
 	top: 100px;
 	left: 580px;
 	font-size: 80px;
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: 'Gruppo';
 	animation: reveal 2000ms ease-in-out forwards 100ms ;
 }
 @keyframes reveal {
@@ -348,7 +383,8 @@ nav a:hover {
 	top: 100px;
 	left: 520px;
 	font-size: 80px;
-	font-family: "Source Sans Pro", sans-serif;
+	/* font-family: "Source Sans Pro", sans-serif; */
+	font-family: 'Gruppo';
 	animation: reveal 2000ms ease-in-out forwards 100ms ;
 }
 @keyframes reveal {
@@ -368,7 +404,7 @@ nav a:hover {
 
 .q{
 	position: absolute;
-	bottom: 20px;
+	bottom: -15px;
 	left: -55%;
 	width: 200px;
 }
@@ -378,14 +414,14 @@ nav a:hover {
 	/* LINK TO LOG IN IF EXISTING ACCOUNT */
 	position: absolute;
 	bottom: 80px;
-	left: 23%;
+	left: 26%;
 }
 
 .signuplinks{
 	outline: none !important;
 	color: white;
 	position: absolute;
-	bottom: -3px;
+	bottom: -52px;
 
 }
 
@@ -406,102 +442,108 @@ nav a:hover {
 	outline: none !important;
 
 	position: absolute;
-	bottom: 350px;
-	left: 21%;
+	bottom: 360px;
+	left: 25%;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 	line-height: 1px;
 
-	color: #474747;
+	color: #ffffff;
 	background-color: rgb(255, 255, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 .signuplast {
 	outline: none !important;
 	position: absolute;
-	bottom: 290px;
-	left: 21%;
+	bottom: 275px;
+	left: 25%;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 	line-height: 1px;
 
-	color: #4b4a4a;
+	color: #ffffff;
 	background-color: rgb(255, 255, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 .signupuser {
 	outline: none !important;
 	position: absolute;
-	bottom: 220px;
-	left: 21%;
+	bottom: 190px;
+	left: 25%;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 	line-height: 1px;
 
-	color: #383737;
+	color: #ffffff;
 	background-color: rgb(250, 253, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 .signupass {
 	outline: none !important;
 	position: absolute;
-	bottom: 150px;
-	left: 21%;
+	bottom: 100px;
+	left: 25%;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 	line-height: 1px;
 
-	color: #202020;
+	color: #ffffff;
 	background-color: rgb(255, 255, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 .signupbtn {
 	outline: none !important;
 	position: absolute;
-	bottom: 10px;
+	bottom: -55px;
 	height: 70px;
 
 	width: 300px;
 	border: 1px solid transparent;
 	position: absolute;
 	cursor: pointer;
-	left: 29%;
+	left: 35%;
 	font-size: 20px;
 
 	background-color: #ffffffe3;
@@ -535,7 +577,7 @@ left: -150%;
 
 	background-color: transparent;
 	transition: transform 250ms ease-in-out;
-	font-size: 14px;
+	font-size: 24px;
 	line-height: 18px;
 
 	color: #ffffff;
@@ -564,7 +606,7 @@ left: -150%;
 
 	outline: 0;
 	border: 1px solid transparent;
-	border-bottom: 1.5px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
 	border-radius: 0;
 	background-position: 100% center;
 }
@@ -1111,21 +1153,137 @@ img {
 	position: relative;
 	width: 150px;
 	font-family: 'Gruppo';font-size: 36px;
-	top: -354px;
+	top: -70px;
 
-	left: 27em;
+	left: 31em;
 }
 
-
+.whole{
+	/* border: solid white; */
+	position: relative;
+	height: 100vh;
+}
 .checkoutbtn{
 	border:solid white;
 	font-family: 'Gruppo';font-size: 26px;
 	position: relative;
-	top: -352px;
-	
-	left: 36.5em;
+	top: 352px;
+	border-radius: 10px;
+	left: 5em;
 
 }
+.toconfirm{
+	text-decoration: none;
+	color: black;
+}
+
+
+.billing{
+	position: relative;
+    /* border: solid white; */
+	width: 400px;
+	height: 500px;
+	top: -500px;
+	left: 60em;
+
+}
+
+.billadress{
+	outline: none !important;
+	position: absolute;
+	bottom: 430px;
+	left: 10%;
+
+	width: 330px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #383737;
+	background-color: rgb(250, 253, 255);
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190);
+
+}
+
+.billstate{
+	outline: none !important;
+	position: absolute;
+	bottom: 350px;
+	left: 10%;
+
+	width: 330px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #383737;
+	background-color: rgb(250, 253, 255);
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190);
+
+}
+
+.billzip{
+	outline: none !important;
+	position: absolute;
+	bottom: 280px;
+	left: 10%;
+
+	width: 330px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #383737;
+	background-color: rgb(250, 253, 255);
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190);
+
+}
+
+.billcard{
+	outline: none !important;
+	position: absolute;
+	bottom: 190px;
+	left: 10%;
+
+	width: 330px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #383737;
+	background-color: rgb(250, 253, 255);
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190);
+
+}
+
 
 .checkouttitle{
 	/* border:solid white; */
@@ -1242,6 +1400,8 @@ img {
 .checkoutotal{}
 
 .checkoutbtn{}
+
+
 
 
 /*=============== confirmation page ================== */
@@ -1526,3 +1686,5 @@ img {
   font-size:30px;
   margin-left:65px;
 }
+
+

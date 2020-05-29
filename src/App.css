@@ -1187,76 +1187,111 @@ img {
 	left: 60em;
 
 }
-
+/* ? */
 .billadress{
 	outline: none !important;
 	position: absolute;
 	bottom: 430px;
 	left: 10%;
 
-	width: 330px;
+	width: 230px;
 
 	padding: 12px 24px;
 
 	font-size: 14px;
 	line-height: 1px;
 
-	color: #383737;
-	background-color: rgb(250, 253, 255);
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 
 }
 
 .billstate{
 	outline: none !important;
 	position: absolute;
-	bottom: 350px;
+	bottom: 370px;
 	left: 10%;
 
-	width: 330px;
+	width: 230px;
 
 	padding: 12px 24px;
 
 	font-size: 14px;
 	line-height: 1px;
 
-	color: #383737;
-	background-color: rgb(250, 253, 255);
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 
+}
+.billcity{
+	outline: none !important;
+	position: absolute;
+	bottom: 310px;
+	left: 10%;
+
+	width: 230px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 
 .billzip{
 	outline: none !important;
 	position: absolute;
-	bottom: 280px;
+	bottom: 250px;
 	left: 10%;
 
-	width: 330px;
+	width: 230px;
 
 	padding: 12px 24px;
 
 	font-size: 14px;
 	line-height: 1px;
 
-	color: #383737;
-	background-color: rgb(250, 253, 255);
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 
 }
 
@@ -1266,21 +1301,24 @@ img {
 	bottom: 190px;
 	left: 10%;
 
-	width: 330px;
+	width: 230px;
 
 	padding: 12px 24px;
 
 	font-size: 14px;
 	line-height: 1px;
 
-	color: #383737;
-	background-color: rgb(250, 253, 255);
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 
 }
 
@@ -1290,8 +1328,9 @@ img {
 	position: relative;
 	width: 150px;
 	font-family: 'Gruppo';font-size: 26px;
-	left: -2.5em;
-	top: -352px;
+	left: -3.0em;
+	top: 32px;
+	/* border:solid white */
 
 }
 
@@ -1300,8 +1339,8 @@ img {
 	width: 150px;
 	font-family: 'Gruppo';font-size: 26px;
 	position: relative;
-	left: -2em;
-	top: -352px;
+	left: -2.5em;
+	top: 32px;
 
 }
 
@@ -1401,17 +1440,64 @@ img {
 
 .checkoutbtn{}
 
+.cartimg{
+	/* border:solid white; */
+	position: relative;
+	height: 330px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	bottom: 450px;
+}
+.empty{
+	/* border:solid white; */
+	position: relative;
+	width: 370px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	bottom: 450px;
+	left: 4%;
+	font-family: 'Gruppo';font-size: 52px;
 
-
+}
 
 /*=============== confirmation page ================== */
 
 .confirmation{
-    position: relative;
-    border: solid white;
+    position: absolute;
     width: 1000px;
-    top: 50px;
+    top: 180px;
+    left:480px;
+    font-family: 'Gruppo';font-size: 26px;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation: fadeInUp 2s ease-in-out 0s forwards;
+    z-index: -999;
+
 } 
+.truck{
+    position: absolute;
+    width:  25%;
+    height: auto;
+    margin-top: 34em;
+    margin-left: 48em;
+
+    position: fixed; 
+    overflow-y: hidden;
+    /* top: 0; right: 0; bottom: 0; left: 0;  */
+    animation: truck 13.5s linear  infinite ;
+    z-index: 1;
+  }
+  @keyframes truck {
+    0% {
+        left: -768px;
+      }
+      100% {
+        left: 868px;
+    }
+    
+}
 
 
 
@@ -1425,8 +1511,8 @@ img {
     border:solid black
 
 }
-*
-{
+/* *
+{ */
     /* position: relative; */
   /* margin: 0;
   padding: 0; */
@@ -1435,7 +1521,7 @@ img {
   box-sizing: border-box; */
 
 
-}
+/* } */
 
 .black{
     position: absolute;

@@ -9,6 +9,7 @@ class Cart extends Component {
         address:'',
         zipcode:'',
         state:'',
+        city:'',
         card:''
 
 
@@ -22,7 +23,7 @@ class Cart extends Component {
     handleClick=(e)=>{
         e.preventDefault()
         this.props.toggleCheckout(this.props.cart)
-        const{address, zipcode, state, card}=this.state
+        const{address, zipcode, state, city, card}=this.state
         fetch(`http://localhost:4000/users/${this.props.user.id}`,{
             method:'PATCH',
             headers:{
@@ -33,6 +34,7 @@ class Cart extends Component {
                 address,
                 zipcode,
                 state,
+                city,
                 card
             })
         })
@@ -48,7 +50,7 @@ class Cart extends Component {
     }
     render() {
 
-
+        let cartImg =require('../image/ezgif.com-gif-maker (4).gif')
         // console.log(this.props)
         const {cart} = this.props
 
@@ -91,6 +93,9 @@ console.log('cart length', this.props.cart)
                      <input className='billadress' type="text" placeholder='Address' name="address" value={this.state.address} onChange={this.handleChange}/><br/>
                 
                     <input className='billstate' type="text" placeholder='State' name="state" value={this.state.state} onChange={this.handleChange}/><br/>
+
+                    <input className='billcity' type="text" placeholder='City' name="city" value={this.state.city} onChange={this.handleChange}/><br/>
+
                
                     <input className='billzip' type="text" placeholder='Zipcode'  name="zipcode" value={this.state.zipcode} onChange={this.handleChange}/><br/>
                 
@@ -101,7 +106,11 @@ console.log('cart length', this.props.cart)
                     {/* <Link className='toconfirm' to='/confirmation'>Checkout</Link> */}
                 </button>
                </form>
-               </> : null
+               </> : 
+               <>
+               <h1 className='empty'>Empty Cart</h1>
+                <img className='cartimg' src={cartImg} alt='cartImg' />
+                </>
                  } 
 
 

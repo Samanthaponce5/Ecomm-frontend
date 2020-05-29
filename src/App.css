@@ -231,6 +231,20 @@ nav a:hover {
 	margin-right: -50%;
 	transform: translate(-50%, -50%);
 }
+/* llllllllllllllllllllllllllll` ``````````````````````````````````````````````````````````````````````````````````*/
+
+
+/* .loginputname,
+.loginputname::-webkit-input-placeholder {
+	font-family: 'Gruppo';font-size: 32px;
+    line-height: 3;
+}*/
+
+input,
+input::-webkit-input-placeholder {
+	font-family: 'Gruppo';
+    line-height: 3;
+} 
 
 .loginputname {
 	outline: none !important;
@@ -240,46 +254,59 @@ nav a:hover {
 
 	background-color: transparent;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 
 	line-height: 18px;
 
-	color: #8d8787;
-	background-color: rgb(255, 255, 255);
+	color: #ffffff;
+	/* background-color: rgb(255, 255, 255); */
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+
+	background: transparent;
+    border: none;
+	border-bottom: 1px solid #ffffff;
+	position: relative;
+	bottom: 60px;
+	
+
 }
 
 .loginputpassword {
 	outline: none !important;
 	position: absolute;
-	bottom: 170px;
+	bottom: 200px;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
+
 	line-height: 1px;
 
-	color: #8d8787;
+	color: #ffffff;
 	background-color: rgb(255, 255, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 
 .loginbutton {
 	outline: none !important;
 	position: absolute;
-	bottom: 10px;
+	bottom: 40px;
 	height: 70px;
 
 	width: 300px;
@@ -298,14 +325,22 @@ nav a:hover {
 	/* border: 3px solid #73AD21; */
 	outline: none !important;
 	position: absolute;
-	bottom: 60px;
+	bottom: 70px;
+	width: 200px;
 }
 .signuplink{
 	outline: none !important;
-	color: white;
+	color: rgb(201, 201, 201);
 	position: absolute;
-	bottom: 30px;
+	bottom: 50px;
 
+}
+.dont{
+	position: absolute;
+	bottom: 55px;
+	width: 200px;
+	/* left: 20px; */
+	color: rgb(201, 201, 201);
 }
 /* =========================END OF LOG IN=============================== */
 
@@ -318,7 +353,7 @@ nav a:hover {
 	top: 100px;
 	left: 580px;
 	font-size: 80px;
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: 'Gruppo';
 	animation: reveal 2000ms ease-in-out forwards 100ms ;
 }
 @keyframes reveal {
@@ -348,7 +383,8 @@ nav a:hover {
 	top: 100px;
 	left: 520px;
 	font-size: 80px;
-	font-family: "Source Sans Pro", sans-serif;
+	/* font-family: "Source Sans Pro", sans-serif; */
+	font-family: 'Gruppo';
 	animation: reveal 2000ms ease-in-out forwards 100ms ;
 }
 @keyframes reveal {
@@ -368,7 +404,7 @@ nav a:hover {
 
 .q{
 	position: absolute;
-	bottom: 20px;
+	bottom: -15px;
 	left: -55%;
 	width: 200px;
 }
@@ -378,14 +414,14 @@ nav a:hover {
 	/* LINK TO LOG IN IF EXISTING ACCOUNT */
 	position: absolute;
 	bottom: 80px;
-	left: 23%;
+	left: 26%;
 }
 
 .signuplinks{
 	outline: none !important;
 	color: white;
 	position: absolute;
-	bottom: -3px;
+	bottom: -52px;
 
 }
 
@@ -406,102 +442,108 @@ nav a:hover {
 	outline: none !important;
 
 	position: absolute;
-	bottom: 350px;
-	left: 21%;
+	bottom: 360px;
+	left: 25%;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 	line-height: 1px;
 
-	color: #474747;
+	color: #ffffff;
 	background-color: rgb(255, 255, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 .signuplast {
 	outline: none !important;
 	position: absolute;
-	bottom: 290px;
-	left: 21%;
+	bottom: 275px;
+	left: 25%;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 	line-height: 1px;
 
-	color: #4b4a4a;
+	color: #ffffff;
 	background-color: rgb(255, 255, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 .signupuser {
 	outline: none !important;
 	position: absolute;
-	bottom: 220px;
-	left: 21%;
+	bottom: 190px;
+	left: 25%;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 	line-height: 1px;
 
-	color: #383737;
+	color: #ffffff;
 	background-color: rgb(250, 253, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 .signupass {
 	outline: none !important;
 	position: absolute;
-	bottom: 150px;
-	left: 21%;
+	bottom: 100px;
+	left: 25%;
 
 	width: 430px;
 
 	padding: 12px 24px;
 
-	font-size: 14px;
+	font-family: 'Gruppo';font-size: 32px;
 	line-height: 1px;
 
-	color: #202020;
+	color: #ffffff;
 	background-color: rgb(255, 255, 255);
 
 	background-repeat: no-repeat;
 	background-size: 18px 18px;
 	background-position: 95% center;
-	border-radius: 10px;
-	border: 1px solid rgb(183, 187, 190);
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
 }
 .signupbtn {
 	outline: none !important;
 	position: absolute;
-	bottom: 10px;
+	bottom: -55px;
 	height: 70px;
 
 	width: 300px;
 	border: 1px solid transparent;
 	position: absolute;
 	cursor: pointer;
-	left: 29%;
+	left: 35%;
 	font-size: 20px;
 
 	background-color: #ffffffe3;
@@ -523,7 +565,7 @@ nav a:hover {
 
 .search__container {
 	padding-top: 0px;
-	margin-top: -15px;
+	margin-top: -20px;
 	position: absolute;
 left: -150%;
 }
@@ -535,7 +577,7 @@ left: -150%;
 
 	background-color: transparent;
 	transition: transform 250ms ease-in-out;
-	font-size: 14px;
+	font-size: 24px;
 	line-height: 18px;
 
 	color: #ffffff;
@@ -564,7 +606,7 @@ left: -150%;
 
 	outline: 0;
 	border: 1px solid transparent;
-	border-bottom: 1.5px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
 	border-radius: 0;
 	background-position: 100% center;
 }
@@ -1111,29 +1153,184 @@ img {
 	position: relative;
 	width: 150px;
 	font-family: 'Gruppo';font-size: 36px;
-	top: -354px;
+	top: -70px;
 
-	left: 27em;
+	left: 31em;
 }
 
-
+.whole{
+	/* border: solid white; */
+	position: relative;
+	height: 100vh;
+}
 .checkoutbtn{
 	border:solid white;
 	font-family: 'Gruppo';font-size: 26px;
 	position: relative;
-	top: -352px;
-	
-	left: 36.5em;
+	top: 352px;
+	border-radius: 10px;
+	left: 5em;
 
 }
+.toconfirm{
+	text-decoration: none;
+	color: black;
+}
+
+
+.billing{
+	position: relative;
+    /* border: solid white; */
+	width: 400px;
+	height: 500px;
+	top: -500px;
+	left: 60em;
+
+}
+/* ? */
+.billadress{
+	outline: none !important;
+	position: absolute;
+	bottom: 430px;
+	left: 10%;
+
+	width: 230px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+
+}
+
+.billstate{
+	outline: none !important;
+	position: absolute;
+	bottom: 370px;
+	left: 10%;
+
+	width: 230px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+
+}
+.billcity{
+	outline: none !important;
+	position: absolute;
+	bottom: 310px;
+	left: 10%;
+
+	width: 230px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+}
+
+.billzip{
+	outline: none !important;
+	position: absolute;
+	bottom: 250px;
+	left: 10%;
+
+	width: 230px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+
+}
+
+.billcard{
+	outline: none !important;
+	position: absolute;
+	bottom: 190px;
+	left: 10%;
+
+	width: 230px;
+
+	padding: 12px 24px;
+
+	font-size: 14px;
+	line-height: 1px;
+
+	color: #ffffff;
+	/* background-color: rgb(250, 253, 255); */
+
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-position: 95% center;
+	/* border-radius: 10px;
+	border: 1px solid rgb(183, 187, 190); */
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+
+}
+
 
 .checkouttitle{
 	/* border:solid white; */
 	position: relative;
 	width: 150px;
 	font-family: 'Gruppo';font-size: 26px;
-	left: -2.5em;
-	top: -352px;
+	left: -3.0em;
+	top: 32px;
+	/* border:solid white */
 
 }
 
@@ -1142,8 +1339,8 @@ img {
 	width: 150px;
 	font-family: 'Gruppo';font-size: 26px;
 	position: relative;
-	left: -2em;
-	top: -352px;
+	left: -2.5em;
+	top: 32px;
 
 }
 
@@ -1179,13 +1376,13 @@ img {
 	/* border-radius: 3px; */
 	display: block;
 	height: 60px;
-	border: solid red;
+	/* border: solid rgb(0, 17, 255); */
 	position: relative;
 	/* margin: calc(50vh - 30px) auto 0 auto; */
-	width: 270px;
+	width: 218px;
 }
 .span {
-	border: solid red;
+	/* border: solid rgb(0, 255, 170); */
 	color: #ffffff;
 	font-family: sans-serif;
 	float: left;
@@ -1243,56 +1440,114 @@ img {
 
 .checkoutbtn{}
 
+.cartimg{
+	/* border:solid white; */
+	position: relative;
+	height: 330px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	bottom: 450px;
+}
+.empty{
+	/* border:solid white; */
+	position: relative;
+	width: 370px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	bottom: 450px;
+	left: 4%;
+	font-family: 'Gruppo';font-size: 52px;
+
+}
 
 /*=============== confirmation page ================== */
 
 .confirmation{
-    position: relative;
-    border: solid white;
+    position: absolute;
     width: 1000px;
-    top: 50px;
+    top: 180px;
+    left:480px;
+    font-family: 'Gruppo';font-size: 26px;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation: fadeInUp 2s ease-in-out 0s forwards;
+    z-index: -999;
+
 } 
+.truck{
+    position: absolute;
+    width:  25%;
+    height: auto;
+    margin-top: 34em;
+    margin-left: 48em;
+
+    position: fixed; 
+    overflow-y: hidden;
+    /* top: 0; right: 0; bottom: 0; left: 0;  */
+    animation: truck 13.5s linear  infinite ;
+    z-index: 1;
+  }
+  @keyframes truck {
+    0% {
+        left: -768px;
+      }
+      100% {
+        left: 868px;
+    }
+    
+}
 
 
 
 
-/* entranceeeee */
-
-
+/* enterrr */
 .enter{
     position: absolute;
     z-index: 1;
     margin-top:30px ;
     margin-left:-70em ;
     border:solid black
-	
+
 }
-*
-{
+/* *
+{ */
     /* position: relative; */
   /* margin: 0;
   padding: 0; */
-  -webkit-box-sizing: border-box;
+  /* -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 
 
+/* } */
+
+.black{
+    position: absolute;
+    border: solid black;
+    margin-top:-44.5em ;
+    margin-left:-95em ;
+    width: 300%;
+    height: 200%;
+
+    z-index: -1;
 }
-
-
 
 .picture
 {
   display: block;
   width: 100%;
-  height: 130%
+  height: 130%;
+  margin-top: -10em;
+  
 }
 
 #slider
 {
     top: 50px;
     width: 100%;
-    height: 00%;
+    height: auto;
     z-index: 9999;
     overflow-x: hidden; 
 
@@ -1340,19 +1595,21 @@ img {
 {
     position: absolute;
     width: 300%;
-    height: 100%;
+    height: auto;
     top: 50px;
-    left: 0;
-    overflow: hidden;
+    margin-left:-10px;
+    overflow: visible;
     -webkit-animation: slider 16s infinite;
-    animation: slider 16s infinite
+    animation: slider 16s infinite;
+    border:solid black
+
 }
 
-#slider #slides:hover
+/* #slider #slides:hover
 {
     -webkit-animation-play-state: paused;
     animation-play-state: paused
-}
+} */
 
 #slider #slides .slide
 {
@@ -1360,7 +1617,6 @@ img {
     width: 33.33333333%;
     height: 100%;
     float: left;
-    overflow: hidden
 }
 
 #slider #slides .slide .caption
@@ -1372,7 +1628,7 @@ img {
   left: 0;
   background-color: rgba(12, 13, 14, 0.795);
   color: #fff;
-  padding: 20px 4%
+  padding: 40px 4%
 }
 
 #slider #slides .slide .caption p
@@ -1483,10 +1739,11 @@ img {
 .about {
  background:url('https://www.subtlepatterns.com/patterns/brickwall.png');
   background-size:10%;
+  margin-top: -40em;
 }
 
 .frame {
-  margin:490px auto;
+  margin:250px auto;
   margin-left: 5em;
   border:25px solid #222;
   height:475px;
@@ -1512,7 +1769,7 @@ img {
   position:absolute;
   height:350px;
   width:250px;
-  margin-left:30px;
+  margin-left:48px;
   margin-top:50px;
   -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .6);
   box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .1);
@@ -1526,3 +1783,142 @@ img {
   font-size:30px;
   margin-left:65px;
 }
+/* tableee */
+.plant{
+    position: absolute;
+    /* transform: scaleX(-1); */
+    margin-top: -30em;
+    margin-left:-3em;
+
+    float: center;
+  width:  600px;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+.pin{
+    position: absolute;
+    /* transform: scaleX(-1); */
+    margin-top: -1em;
+    margin-left:16.5em;
+
+    float: center;
+  width:  50px;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+
+}
+#two {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    position: absolute;
+    z-index: 1;
+    margin-left: 20em;
+  }
+  
+  .box {
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+  }
+  .box::before {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 10px;
+    position: absolute;
+  }
+  .box::after {
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    content: '';
+    height: 10px;
+    position: absolute;
+  }
+  
+  .start {
+    float: left;
+  }
+  
+  .ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+    -webkit-animation: scrollUp 4s ease-in-out infinite normal;
+            animation: scrollUp 4s ease-in-out infinite normal;
+  }
+  .ul > * {
+    opacity: 1;
+    height: 20px;
+    padding: 10px;
+    list-style: none;
+  }
+  
+  @-webkit-keyframes scrollUp {
+    from {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    to {
+      -webkit-transform: translateY(-80%);
+              transform: translateY(-80%);
+    }
+  }
+  
+  @keyframes scrollUp {
+    from {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    to {
+      -webkit-transform: translateY(-80%);
+              transform: translateY(-80%);
+    }
+  }
+
+
+
+  .scroll-downs {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: -590px;
+	left: 0;
+	margin: auto;
+	/* border: solid white; */
+	width :34px;
+	height: 55px;
+	z-index: 1000;
+  }
+  .mousey {
+	width: 3px;
+	padding: 10px 15px;
+	height: 35px;
+	border: 2px solid rgb(255, 255, 255);
+	border-radius: 25px;
+	opacity: 0.75;
+	box-sizing: content-box;
+  }
+  .scroller {
+	width: 3px;
+	height: 10px;
+	border-radius: 25%;
+	background-color: #fff;
+	animation-name: scroll;
+	animation-duration: 2.2s;
+	animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+	animation-iteration-count: infinite;
+  }
+  @keyframes scroll {
+	0% { opacity: 0; }
+	10% { transform: translateY(0); opacity: 1; }
+	100% { transform: translateY(15px); opacity: 0;}
+  }

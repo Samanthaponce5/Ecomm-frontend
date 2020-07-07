@@ -51,7 +51,7 @@ class Cart extends Component {
 
         let cartImg =require('../image/ezgif.com-gif-maker (4).gif')
         // console.log(this.props)
-        const {cart total, totalPrice } = this.props
+        const {cart, total, totalPrice } = this.props
 
 
         let productQTY = {}

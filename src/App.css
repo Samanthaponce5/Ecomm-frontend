@@ -1042,9 +1042,9 @@ img {
 .imgtitle{
 	position: relative;
 	/* border:solid white; */
-	top: 40px;
-	width: 130px;
-	left: 1060px;
+	top: 160px;
+	width: 340px;
+	left: 1010px;
 	font-family: 'Gruppo';font-size: 42px;
 	/* border: solid white; */
 
@@ -1055,7 +1055,7 @@ img {
 		position: relative;
 		top:190px;
 		left: 990px;
-		width: 300px;
+		width: 500px;
 		font-family: 'Gruppo';font-size: 32px;
 		width: 430px;
 		/* border: solid white; */
@@ -1100,7 +1100,7 @@ img {
 	}
 	.addtocartimg{
 		position: absolute;
-		top: 600px;
+		top: 670px;
 		left: 1099px;
 		height: 65px;
 		width: 100px;
@@ -1188,6 +1188,16 @@ img {
 
 }
 /* ? */
+
+.ready{
+/* border:solid white; */
+position: absolute;
+width:300px;
+font-family: 'Gruppo';font-size: 26px;
+top:170px;
+left:70%;
+text-shadow: 2px 2px 3px #929292;
+}
 .billadress{
 	outline: none !important;
 	position: absolute;
@@ -1331,6 +1341,7 @@ img {
 	left: -3.0em;
 	top: 32px;
 	/* border:solid white */
+	text-shadow: 2px 2px 3px #929292;
 
 }
 
@@ -1341,6 +1352,7 @@ img {
 	position: relative;
 	left: -2.5em;
 	top: 32px;
+	text-shadow: 2px 2px 3px #929292;
 
 }
 

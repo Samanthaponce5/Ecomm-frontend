@@ -1,6 +1,6 @@
 
 ## Picology
-An e-commerce site where you can shop around for many options of photography.<br> You can buy, add it to your cart and when you are ready you can check out to have it shipped to your home
+An e-commerce site where you can shop around for many options of photography.<br> You can buy, add it to your cart and when you are ready you can check out to have<br>it shipped to your home
 
 ## Getting Started
 

@@ -70,7 +70,7 @@ export default class about extends Component{
             <style>{'body { background:url(https://www.subtlepatterns.com/patterns/brickwall.png);overflow-x: hidden;'}</style>
             </Helmet>
         
-            <img className="pin" src={pin} alt ="plant"/>
+            <img className="pin" src={pin} alt ="pin"/>
 
             <div class="frame">
          <div class="border">

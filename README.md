@@ -18,3 +18,7 @@ You can navigate to the backend for this project  [Ecomm Backend](https://github
 -[ReactJs](https://reactjs.org/) Library <br>
 -Rails API [Backend](https://github.com/Samanthaponce5/plasticTalesBackend)<br>
 -Custom CSS<br>
+
+<img src="src/image/ezgif.com-video-to-gif (2).gif">
+
+
